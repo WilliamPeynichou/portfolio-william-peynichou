@@ -1,0 +1,73 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+    color-scheme: light dark;
+  }
+
+  html, body {
+    @apply m-0 p-0 w-full h-full overflow-x-hidden;
+  }
+
+  body {
+    @apply min-w-[320px] min-h-[300vh];
+  }
+
+  #root {
+    @apply relative min-h-[300vh];
+  }
+}
+
+@layer components {
+  .bounce-animation {
+    animation: bounce 2s infinite;
+  }
+
+  /* VS Code Dark+ theme syntax highlighting */
+  .syntax-highlight {
+    color: #d4d4d4;
+  }
+
+  .syntax-highlight .keyword {
+    color: #569cd6; /* Bleu pour les mots-clés */
+  }
+
+  .syntax-highlight .string {
+    color: #ce9178; /* Orange pour les chaînes */
+  }
+
+  .syntax-highlight .comment {
+    color: #6a9955; /* Vert pour les commentaires */
+    font-style: italic;
+  }
+
+  .syntax-highlight .function {
+    color: #dcdcaa; /* Jaune pour les fonctions */
+  }
+
+  .syntax-highlight .jsx-tag {
+    color: #4ec9b0; /* Cyan pour les balises JSX */
+  }
+
+  .syntax-highlight .property {
+    color: #9cdcfe; /* Bleu clair pour les propriétés */
+  }
+
+  .syntax-highlight .number {
+    color: #b5cea8; /* Vert clair pour les nombres */
+  }
+
+  .syntax-highlight .type {
+    color: #4ec9b0; /* Cyan pour les types TypeScript */
+  }
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateX(-50%) translateY(0);
+  }
+  50% {
+    transform: translateX(-50%) translateY(-10px);
+  }
+}
