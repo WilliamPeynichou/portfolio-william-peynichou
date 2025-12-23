@@ -39,15 +39,15 @@ const WilliamPeynichou = () => {
     age: 27,
     role: 'Full Stack Developer',
     skills: [
-      'React', 'Next.js', 'Tailwind CSS',
+      'React', 'Node.js', Express, 'Tailwind CSS', 'Three.js', Animate UI,
       'JavaScript', 'Symfony', 'MySQL'
     ],
     projects: [
       'Portfolio', 'Website', 'Application'
     ],
     tools: [
-      'Cursor', 'Figma', 'Photoshop',
-      'n8n', 'PHPStorm', 'Git'
+      'Cursor', 'Figma', 'Illustrator', Lightroom,
+      'n8n', 'PHPStorm', 'Git', GitHub, Postman, Insomnia,
     ]
   };
 

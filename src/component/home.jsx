@@ -4,7 +4,9 @@ import Footer from './layout/footer';
 import Opener from './opener/opener';
 import CodePresentation from './codePresentation';
 import ProjectsPresentation from './ProjectsPresentation';
+import Stacks from './Stacks';
 import ProfileSection from './ProfileSection';
+import VeilleSection from './VeilleSection';
 import { PhotographySection, ArchivesSection } from './ExtraSections';
 
 const Home = () => {
@@ -26,7 +28,9 @@ const Home = () => {
             {/* Chaque section apparaît au scroll */}
             <CodePresentation />
             <ProjectsPresentation />
+            <Stacks />
             <ProfileSection />
+            <VeilleSection />
             <PhotographySection />
             <ArchivesSection />
             {/* Ajoutez d'autres composants ici, ils apparaîtront au scroll */}

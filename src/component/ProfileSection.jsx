@@ -1,5 +1,6 @@
 import { useLanguage } from '@/context/LanguageContext'
 import profileImage from '@/assets/profile.png'
+import cvImage from '@/assets/cv.png'
 
 function ProfileSection() {
   const { language } = useLanguage()
@@ -63,14 +64,21 @@ function ProfileSection() {
             </div>
             
             <div className="flex flex-col sm:flex-row gap-4">
-              <button className="flex-1 px-6 py-4 rounded-full bg-white text-black font-medium hover:bg-gray-200 transition-colors flex items-center justify-center gap-2">
+              <a 
+                href={cvImage} 
+                download="CV_William_Peynichou.png"
+                className="flex-1 px-6 py-4 rounded-full bg-white text-black font-medium hover:bg-gray-200 transition-colors flex items-center justify-center gap-2 cursor-pointer"
+              >
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
                 </svg>
                 {t.downloadCV}
-              </button>
+              </a>
               
-              <button className="flex-1 px-6 py-4 rounded-full border border-white/20 hover:bg-white/10 transition-colors flex items-center justify-center gap-2">
+              <button 
+                onClick={() => window.open(cvImage, '_blank')}
+                className="flex-1 px-6 py-4 rounded-full border border-white/20 hover:bg-white/10 transition-colors flex items-center justify-center gap-2"
+              >
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
@@ -79,9 +87,13 @@ function ProfileSection() {
               </button>
             </div>
 
-            {/* CV Preview Area (Placeholder) */}
-            <div className="w-full aspect-[1/1.4] bg-white rounded-lg opacity-10 flex items-center justify-center border border-dashed border-gray-500">
-              <span className="text-black font-mono text-sm">CV Preview Placeholder</span>
+            {/* CV Preview Area */}
+            <div className="w-full bg-gray-900 rounded-lg overflow-hidden border border-white/10 group cursor-pointer" onClick={() => window.open(cvImage, '_blank')}>
+              <img 
+                src={cvImage} 
+                alt="CV Preview" 
+                className="w-full h-auto opacity-80 group-hover:opacity-100 transition-opacity duration-300"
+              />
             </div>
           </div>
         </div>
