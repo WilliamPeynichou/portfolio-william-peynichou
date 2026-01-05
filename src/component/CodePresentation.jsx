@@ -37,17 +37,21 @@ const WilliamPeynichou = () => {
   const profile = {
     name: 'William Peynichou',
     age: 27,
-    role: 'Full Stack Developer',
+    role: 'Junior Full Stack Developer',
+    location: 'Bordeaux, France',
     skills: [
       'React', 'Node.js', 'Express', 'Tailwind CSS', 'Three.js', 'Animate UI',
-      'JavaScript', 'Symfony', 'MySQL'
+      'JavaScript', 'Symfony', 'MySQL', 'RAG', 'Chatbot', 'API Rest', 'PHP', 
+      'HTML', 'CSS', 'WebSocket',
     ],
     projects: [
-      'Portfolio', 'Website', 'Application'
+      'Portfolio', 'Website', 'Application', 'Automatisation Code/No Code', 'Bot'
     ],
     tools: [
-      'Cursor', 'Figma', 'Illustrator', Lightroom,
-      'n8n', 'PHPStorm', 'Git', 'GitHub', 'Postman', 'Insomnia',
+      'Cursor', 'Figma', 'Illustrator', 'Lightroom',
+      'n8n','Git', 'GitHub', 'Postman', 'Insomnia', 
+      'IA', 'MAMP', 'Docker', 'Vite', 'Laragon',
+      'PhpMyAdmin', 'Linux Terminal', 'Windows Terminal',
     ]
   };
 
@@ -59,9 +63,9 @@ const WilliamPeynichou = () => {
       <section className="experience">
         <h2>Experience</h2>
         <article>
-          <h3>La Plateforme</h3>
+          <h3>L'Atelier</h3>
           <span>16 months</span>
-          <p>Full stack developer</p>
+          <p>Junior Full Stack Developer</p>
         </article>
       </section>
     </div>
