@@ -4,17 +4,55 @@ import Header from '../layout/header'
 import Footer from '../layout/footer'
 import ImageModal from '@/component/ImageModal'
 
+// Import de toutes les images de la galerie
+import { 
+  AngletKid,
+  Basketball,
+  BiarritzPlage,
+  Camel,
+  Cherie,
+  Door,
+  KoreanGuy,
+  KoreanLoves,
+  Lacanau,
+  Lewis,
+  ManWithDog,
+  MarraScoot,
+  mbappeKid,
+  MenInTheCity,
+  MoroccoMirors,
+  OysterParc,
+  PlaneFlowers,
+  PrahaSnowTrain,
+  SnowKid,
+  SurfBlur
+} from '@/assets/galery'
+
 function Photography() {
   const { language } = useLanguage()
   const [selectedImage, setSelectedImage] = useState(null)
 
   const photos = [
-    { id: 1, src: "https://images.unsplash.com/photo-1542038784456-1ea8e935640e?q=80&w=2670&auto=format&fit=crop", title: "Street Life", location: "Tokyo" },
-    { id: 2, src: "https://images.unsplash.com/photo-1554048612-387768052bf7?q=80&w=2535&auto=format&fit=crop", title: "Neon Nights", location: "Osaka" },
-    { id: 3, src: "https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?q=80&w=2670&auto=format&fit=crop", title: "Mountain View", location: "Swiss Alps" },
-    { id: 4, src: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=2564&auto=format&fit=crop", title: "Portrait", location: "Studio" },
-    { id: 5, src: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?q=80&w=2670&auto=format&fit=crop", title: "Landscape", location: "Yosemite" },
-    { id: 6, src: "https://images.unsplash.com/photo-1501854140884-074cf2bcf2b2c3af?q=80&w=2550&auto=format&fit=crop", title: "Nature", location: "Amazon" },
+    { id: 1, src: AngletKid, title: "Anglet Kid", location: "Anglet" },
+    { id: 2, src: Basketball, title: "Basketball", location: "" },
+    { id: 3, src: BiarritzPlage, title: "Biarritz Plage", location: "Biarritz" },
+    { id: 4, src: Camel, title: "Camel", location: "" },
+    { id: 5, src: Cherie, title: "Cherie", location: "" },
+    { id: 6, src: Door, title: "Door", location: "" },
+    { id: 7, src: KoreanGuy, title: "Korean Guy", location: "Seoul" },
+    { id: 8, src: KoreanLoves, title: "Korean Loves", location: "Seoul" },
+    { id: 9, src: Lacanau, title: "Lacanau", location: "Lacanau" },
+    { id: 10, src: Lewis, title: "Lewis", location: "" },
+    { id: 11, src: ManWithDog, title: "Man With Dog", location: "" },
+    { id: 12, src: MarraScoot, title: "Marrakech Scooter", location: "Marrakech" },
+    { id: 13, src: mbappeKid, title: "Mbappé Kid", location: "" },
+    { id: 14, src: MenInTheCity, title: "Men In The City", location: "" },
+    { id: 15, src: MoroccoMirors, title: "Morocco Mirrors", location: "Morocco" },
+    { id: 16, src: OysterParc, title: "Oyster Parc", location: "" },
+    { id: 17, src: PlaneFlowers, title: "Plane Flowers", location: "" },
+    { id: 18, src: PrahaSnowTrain, title: "Praha Snow Train", location: "Prague" },
+    { id: 19, src: SnowKid, title: "Snow Kid", location: "" },
+    { id: 20, src: SurfBlur, title: "Surf Blur", location: "" },
   ]
 
   return (

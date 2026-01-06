@@ -1,8 +1,13 @@
 import { Link } from 'react-router-dom'
 import { useLanguage } from '@/context/LanguageContext'
 
+// Import des images pour la prévisualisation
+import { BiarritzPlage, Camel, Lewis, SurfBlur } from '@/assets/galery'
+
 export function PhotographySection() {
   const { language } = useLanguage()
+  
+  const previewImages = [BiarritzPlage, Camel, Lewis, SurfBlur]
 
   return (
     <section className="py-32 px-4 md:px-12 bg-black text-white border-t border-white/10">
@@ -29,11 +34,11 @@ export function PhotographySection() {
 
       {/* Preview Strip */}
       <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-4 opacity-60 hover:opacity-100 transition-opacity duration-500">
-        {[1, 2, 3, 4].map((i) => (
+        {previewImages.map((img, i) => (
           <div key={i} className="aspect-square bg-gray-900 rounded-lg overflow-hidden">
              <img 
-               src={`https://images.unsplash.com/photo-${i === 1 ? '1542038784456-1ea8e935640e' : i === 2 ? '1554048612-387768052bf7' : i === 3 ? '1493976040374-85c8e12f0c0e' : '1534528741775-53994a69daeb'}?q=80&w=800&auto=format&fit=crop`}
-               alt="Preview"
+               src={img}
+               alt={`Preview ${i + 1}`}
                className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500"
              />
           </div>
