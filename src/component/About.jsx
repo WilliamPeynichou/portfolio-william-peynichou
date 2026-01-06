@@ -4,8 +4,8 @@ function About() {
   const { language } = useLanguage()
 
   const content = {
-    en: "A developer based in Marseille with an infinite love for clean code, specialized in Full Stack Development and Modern Web Applications.",
-    fr: "Un développeur basé à Marseille avec un amour infini pour le code propre, spécialisé en Développement Full Stack et Applications Web Modernes."
+    en: "A developer based in Bordeaux with an infinite love for clean code, specialized in Full Stack Development and Modern Web Applications.",
+    fr: "Un développeur basé à Bordeaux avec un amour infini pour le code propre, spécialisé en Développement Full Stack et Applications Web Modernes."
   }
 
   return (
