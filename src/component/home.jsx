@@ -2,7 +2,7 @@ import React from 'react';
 import Header from './layout/header';
 import Footer from './layout/footer';
 import Opener from './opener/opener';
-import CodePresentation from './CodePresentation';
+import CodePresentation from './codePresentation';
 import ProjectsPresentation from './ProjectsPresentation';
 import WorkflowSection from './WorkflowSection';
 import Stacks from './Stacks';
