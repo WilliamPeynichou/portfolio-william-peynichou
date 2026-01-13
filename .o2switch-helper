@@ -1,0 +1,92 @@
+# Aide-mémoire O2Switch
+# Ce fichier contient les commandes et URLs utiles
+
+# ═══════════════════════════════════════════════════════════
+# INFORMATIONS DE CONNEXION
+# ═══════════════════════════════════════════════════════════
+
+# cPanel
+URL_CPANEL="https://votredomaine.com:2083"
+
+# FTP
+FTP_HOST="ftp.votredomaine.com"
+FTP_PORT="21"
+FTP_USER="votre_username"
+
+# SSH/SFTP (si activé)
+SSH_HOST="votreserveur.o2switch.net"
+SSH_PORT="22"
+SSH_USER="votre_username"
+
+# ═══════════════════════════════════════════════════════════
+# COMMANDES DE DÉPLOIEMENT
+# ═══════════════════════════════════════════════════════════
+
+# Build du projet
+alias build="npm run build"
+
+# Déploiement complet (build + archive)
+alias deploy="./deploy.sh"
+
+# Build rapide
+alias quick-build="npm run build -- --mode production"
+
+# Déploiement SSH (si configuré)
+alias deploy-ssh="./deploy-ssh.sh"
+
+# ═══════════════════════════════════════════════════════════
+# COMMANDES UTILES
+# ═══════════════════════════════════════════════════════════
+
+# Voir la taille du build
+alias build-size="du -sh dist/"
+
+# Lister les fichiers du build
+alias build-list="ls -lah dist/"
+
+# Reconstruire l'archive zip
+alias make-zip="cd dist && zip -r ../portfolio-deploy.zip . && cd .."
+
+# Nettoyer le build
+alias clean="rm -rf dist/ portfolio-deploy.zip"
+
+# Build + clean
+alias rebuild="rm -rf dist/ portfolio-deploy.zip && npm run build"
+
+# ═══════════════════════════════════════════════════════════
+# VÉRIFICATIONS
+# ═══════════════════════════════════════════════════════════
+
+# Vérifier que le .htaccess est présent
+alias check-htaccess="ls -la dist/.htaccess"
+
+# Compter les fichiers du build
+alias count-files="find dist -type f | wc -l"
+
+# Voir les plus gros fichiers
+alias big-files="find dist -type f -exec ls -lh {} + | sort -k5 -h -r | head -20"
+
+# ═══════════════════════════════════════════════════════════
+# URLS UTILES
+# ═══════════════════════════════════════════════════════════
+
+# Support O2Switch
+URL_SUPPORT="https://www.o2switch.fr/support/"
+URL_FAQ="https://faq.o2switch.fr/"
+
+# Tests de performance
+URL_PAGESPEED="https://pagespeed.web.dev/"
+URL_GTMETRIX="https://gtmetrix.com/"
+
+# Téléchargement FileZilla
+URL_FILEZILLA="https://filezilla-project.org/"
+
+# ═══════════════════════════════════════════════════════════
+# NOTES
+# ═══════════════════════════════════════════════════════════
+
+# Pour utiliser ces alias, ajoutez cette ligne à votre ~/.zshrc ou ~/.bashrc :
+# source /Users/williampeynichou/Portfolio/portfolio/.o2switch-helper
+
+# Puis rechargez votre shell :
+# source ~/.zshrc  # ou source ~/.bashrc
