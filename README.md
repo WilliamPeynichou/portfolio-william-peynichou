@@ -1,16 +1,93 @@
-# React + Vite
+# 🎨 Portfolio William Peynichou
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Portfolio personnel développé avec React + Vite, déployé sur O2Switch.
 
-Currently, two official plugins are available:
+## 🚀 Démarrage rapide
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### Installation
+```bash
+npm install
+```
 
-## React Compiler
+### Développement
+```bash
+npm run dev
+```
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### Build de production
+```bash
+npm run build
+```
 
-## Expanding the ESLint configuration
+## 📦 Déploiement
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Le projet est configuré pour un déploiement automatique via GitHub Actions vers O2Switch.
+
+### Déploiement automatique
+À chaque push sur `main`, GitHub Actions :
+1. Build le projet
+2. Déploie automatiquement sur O2Switch via FTP
+
+### Déploiement manuel
+```bash
+npm run build
+# Puis uploadez le contenu de dist/ vers votre serveur
+```
+
+## 📚 Documentation
+
+Toute la documentation est disponible dans le dossier [`docs/`](./docs/) :
+
+- **[README-DEPLOIEMENT.md](./docs/README-DEPLOIEMENT.md)** - Guide de démarrage rapide
+- **[DEPLOIEMENT-O2SWITCH.md](./docs/DEPLOIEMENT-O2SWITCH.md)** - Guide complet O2Switch
+- **[DEPLOIEMENT-GIT.md](./docs/DEPLOIEMENT-GIT.md)** - Déploiement via Git
+- **[GUIDE-DEPLOIEMENT-COMPLET.md](./docs/GUIDE-DEPLOIEMENT-COMPLET.md)** - Comparaison des méthodes
+- **[CHECKLIST-DEPLOIEMENT.md](./docs/CHECKLIST-DEPLOIEMENT.md)** - Checklist de vérification
+
+## 🛠️ Scripts utiles
+
+Les scripts de déploiement sont dans le dossier [`scripts/`](./scripts/) :
+
+```bash
+# Déploiement Git automatique
+./scripts/deploy-git.sh
+
+# Build et création d'archive
+./scripts/deploy.sh
+```
+
+## 📁 Structure du projet
+
+```
+portfolio/
+├── .github/          # Configuration GitHub Actions
+├── docs/             # Documentation complète
+├── public/           # Fichiers statiques
+├── scripts/          # Scripts de déploiement
+├── src/              # Code source React
+│   ├── assets/       # Images et médias
+│   ├── component/    # Composants React
+│   ├── context/      # Contextes React
+│   └── data/         # Données du portfolio
+├── index.html        # Point d'entrée HTML
+├── package.json      # Dépendances
+└── vite.config.js    # Configuration Vite
+```
+
+## 🔧 Technologies
+
+- **React 19** - Framework UI
+- **Vite** - Build tool
+- **Tailwind CSS** - Styling
+- **Three.js** - Animations 3D
+- **React Router** - Navigation
+
+## 🌐 Déploiement
+
+- **Hébergement** : O2Switch
+- **CI/CD** : GitHub Actions
+- **Protocole** : FTP
+
+## 📄 Licence
+
+© 2026 William Peynichou - Portfolio personnel
