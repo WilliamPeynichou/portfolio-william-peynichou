@@ -2,6 +2,8 @@
 
 Portfolio personnel développé avec React + Vite, déployé sur O2Switch.
 
+🌐 **Site web** : [williampeynichou.fr](https://williampeynichou.fr)
+
 ## 🚀 Démarrage rapide
 
 ### Installation
