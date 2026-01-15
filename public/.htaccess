@@ -2,13 +2,13 @@
   RewriteEngine On
   RewriteBase /
   
-  # Redirection HTTP vers HTTPS
-  RewriteCond %{HTTPS} off
-  RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+  # Redirection HTTP vers HTTPS (à activer après configuration SSL)
+  # RewriteCond %{HTTPS} off
+  # RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
   
-  # Redirection www vers non-www (optionnel)
-  RewriteCond %{HTTP_HOST} ^www\.williampeynichou\.fr$ [NC]
-  RewriteRule ^(.*)$ https://williampeynichou.fr/$1 [L,R=301]
+  # Redirection www vers non-www (à activer après configuration SSL)
+  # RewriteCond %{HTTP_HOST} ^www\.williampeynichou\.fr$ [NC]
+  # RewriteRule ^(.*)$ https://williampeynichou.fr/$1 [L,R=301]
   
   # Ne pas réecrire les fichiers et répertoires existants
   RewriteCond %{REQUEST_FILENAME} !-f
@@ -62,6 +62,6 @@
   # Clickjacking protection
   Header set X-Frame-Options "SAMEORIGIN"
   
-  # HTTPS Strict Transport Security (activé pour williampeynichou.fr)
-  Header set Strict-Transport-Security "max-age=31536000; includeSubDomains"
+  # HTTPS Strict Transport Security (à activer après configuration SSL)
+  # Header set Strict-Transport-Security "max-age=31536000; includeSubDomains"
 </IfModule>
