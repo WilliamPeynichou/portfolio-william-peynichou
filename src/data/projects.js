@@ -93,5 +93,20 @@ export const projects = [
     technologies: ["React", "Tailwind CSS", "Framer Motion"],
     githubLink: "https://github.com/WilliamPeynichou/Portfolio_",
     gallery: []
+  },
+  {
+    id: 5,
+    slug: 'mars-ia',
+    title: "MarsIA",
+    type: "AI Short Film Festival Mockup",
+    year: "2024",
+    image: "https://images.unsplash.com/photo-1620916566398-39f1143ab7be?q=80&w=2574&auto=format&fit=crop", 
+    description: {
+      fr: "Maquette pour un festival de court métrage basé sur la réalisation IA.",
+      en: "Mockup for an AI-based short film festival."
+    },
+    technologies: ["React", "CSS", "Design"],
+    githubLink: "https://github.com/WilliamPeynichou/marsIA",
+    gallery: []
   }
 ]

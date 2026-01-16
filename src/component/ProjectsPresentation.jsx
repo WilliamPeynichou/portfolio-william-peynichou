@@ -10,12 +10,6 @@ function ProjectItem({ project, index, setHoveredProject, hoveredProject }) {
     <Link 
       to={`/project/${project.slug}`}
       className="group relative block border-t border-white/20 py-8 md:py-12 transition-colors hover:bg-white/5"
-      onMouseEnter={() => {
-        if (project.slug !== 'portfolio') {
-          setHoveredProject(project.id)
-        }
-      }}
-      onMouseLeave={() => setHoveredProject(null)}
     >
       <div className="max-w-7xl mx-auto px-4 md:px-12 flex flex-col md:flex-row justify-between md:items-baseline gap-4">
         {/* Title & Index */}
@@ -75,28 +69,7 @@ export function ProjectsPresentation() {
 
   return (
     <section ref={sectionRef} className="relative min-h-screen bg-black text-white py-32 z-20">
-      {/* Floating Image Reveal */}
-      <div 
-        className="pointer-events-none fixed z-30 hidden md:block w-[400px] h-[500px] rounded-lg overflow-hidden transition-opacity duration-500 ease-out"
-        style={{
-          left: cursorPos.x,
-          top: cursorPos.y,
-          transform: 'translate(-50%, -50%)',
-          opacity: hoveredProject ? 1 : 0
-        }}
-      >
-        {projects.map((project) => (
-          <img
-            key={project.id}
-            src={project.image}
-            alt={project.title}
-            className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-500 ${
-              hoveredProject === project.id ? 'opacity-100' : 'opacity-0'
-            }`}
-          />
-        ))}
-      </div>
-
+      
       {/* Header Section */}
       <div className="max-w-7xl mx-auto px-4 md:px-12 mb-24">
         <h2 className="text-sm font-mono text-gray-500 mb-4 uppercase tracking-wider">
