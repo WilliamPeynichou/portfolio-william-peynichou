@@ -211,10 +211,15 @@ function MarsIA() {
               </div>
             </div>
             <div className="fade-up-meta opacity-0">
-              <h3 className="text-[10px] font-mono uppercase tracking-[0.2em] text-gray-500 mb-4">Live Demo</h3>
-              <a href="https://williampeynichou.github.io/marsIA/" target="_blank" rel="noopener noreferrer" className="block text-lg font-light hover:underline decoration-1 underline-offset-4 text-orange-500">
-                Visit Website
-              </a>
+              <h3 className="text-[10px] font-mono uppercase tracking-[0.2em] text-gray-500 mb-4">Links</h3>
+              <div className="space-y-2">
+                <a href="https://williampeynichou.github.io/marsIA/" target="_blank" rel="noopener noreferrer" className="block text-lg font-light hover:underline decoration-1 underline-offset-4 text-orange-500">
+                  Live Demo
+                </a>
+                <a href="https://github.com/WilliamPeynichou/marsIA" target="_blank" rel="noopener noreferrer" className="block text-lg font-light hover:underline decoration-1 underline-offset-4 text-white/80">
+                  GitHub Repo
+                </a>
+              </div>
             </div>
           </div>
         </section>
