@@ -35,7 +35,7 @@ jobs:
           port: 21
           protocol: ftp
           local-dir: ./dist/
-          server-dir: ./
+          server-dir: /williampeynichou.fr/
           security: loose
           log-level: verbose
           dangerous-clean-slate: false
