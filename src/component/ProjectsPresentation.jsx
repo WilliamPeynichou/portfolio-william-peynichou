@@ -23,8 +23,8 @@ function ProjectItem({ project, index, setHoveredProject, hoveredProject }) {
             </h3>
           </div>
           
-          {/* Mobile Only: Image Preview & Type */}
-          <div className="md:hidden w-full mt-4 space-y-2">
+          {/* Mobile Only: Image Preview & Type (HIDDEN per user request) */}
+          <div className="hidden w-full mt-4 space-y-2">
             <div className="w-full aspect-video rounded-lg overflow-hidden bg-gray-900">
               <img src={project.image} alt={project.title} className="w-full h-full object-cover" />
             </div>

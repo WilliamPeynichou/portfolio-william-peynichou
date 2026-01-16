@@ -68,7 +68,7 @@ function Header() {
 
       {/* Mobile Menu Overlay */}
       <div className={`fixed inset-0 bg-black z-40 transition-transform duration-500 ease-in-out md:hidden ${isMenuOpen ? 'translate-y-0' : '-translate-y-full'}`}>
-        <div className="flex flex-col items-center justify-center h-full gap-8 text-2xl font-light">
+        <div className="flex flex-col items-center justify-center h-full gap-8 text-2xl font-light text-white">
           <button onClick={() => handleNavClick('veille')} className="hover:text-gray-400">
             {language === 'fr' ? 'Veille' : 'Insights'}
           </button>
@@ -76,10 +76,10 @@ function Header() {
             {language === 'fr' ? 'À propos' : 'About'}
           </button>
           
-          <Link to="/photography" onClick={() => setIsMenuOpen(false)} className="hover:text-gray-400 text-lg text-gray-500">
+          <Link to="/photography" onClick={() => setIsMenuOpen(false)} className="hover:text-gray-400 text-lg text-gray-300">
             {language === 'fr' ? 'Photographie' : 'Photography'}
           </Link>
-          <Link to="/archives" onClick={() => setIsMenuOpen(false)} className="hover:text-gray-400 text-lg text-gray-500">
+          <Link to="/archives" onClick={() => setIsMenuOpen(false)} className="hover:text-gray-400 text-lg text-gray-300">
             {language === 'fr' ? 'Archives' : 'Archives'}
           </Link>
 

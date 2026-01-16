@@ -151,7 +151,7 @@ function VideoOpener({ scrollProgress, titleOpacity }) {
         loop
         muted
         playsInline
-        className="absolute inset-0 w-full h-full object-cover"
+        className="hidden md:block absolute inset-0 w-full h-full object-cover"
         style={{
           transform: `scale(${1 + scrollProgress * 0.3})`,
           transition: 'transform 0.1s ease-out'

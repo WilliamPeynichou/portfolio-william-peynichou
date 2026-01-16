@@ -1,9 +1,14 @@
+import { useEffect } from 'react'
 import { useLanguage } from '@/context/LanguageContext'
 import Header from '../layout/header'
 import Footer from '../layout/footer'
 
 function Archives() {
   const { language } = useLanguage()
+
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [])
 
   const projects = [
     { year: "2025", name: "Ecocycle", type: "E-commerce", tech: "React, n8n", link: "#" },
