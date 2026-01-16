@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { useLanguage } from '@/context/LanguageContext'
 import Header from '../layout/header'
 import Footer from '../layout/footer'
@@ -10,6 +10,10 @@ function Contact() {
     email: '',
     message: ''
   })
+
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [])
 
   const handleChange = (e) => {
     const { name, value } = e.target
