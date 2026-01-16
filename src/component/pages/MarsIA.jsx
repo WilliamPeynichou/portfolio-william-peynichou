@@ -197,7 +197,7 @@ function MarsIA() {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-12">
             <div className="fade-up-meta opacity-0">
               <h3 className="text-[10px] font-mono uppercase tracking-[0.2em] text-gray-500 mb-4">Year</h3>
-              <p className="text-lg font-light">2024</p>
+              <p className="text-lg font-light">2026</p>
             </div>
             <div className="fade-up-meta opacity-0">
               <h3 className="text-[10px] font-mono uppercase tracking-[0.2em] text-gray-500 mb-4">Role</h3>
