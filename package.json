@@ -13,17 +13,13 @@
     "@react-three/fiber": "^9.4.2",
     "@shadergradient/react": "^2.4.20",
     "animejs": "^4.2.2",
-    "camera-controls": "^3.1.2",
-    "cors": "^2.8.5",
-    "dompurify": "^3.3.1",
     "lucide-react": "^0.562.0",
     "prismjs": "^1.30.0",
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
     "react-router-dom": "^7.11.0",
     "tailwindcss": "^4.1.18",
-    "three": "^0.182.0",
-    "three-stdlib": "^2.36.1"
+    "three": "^0.182.0"
   },
   "devDependencies": {
     "@eslint/js": "^9.39.1",

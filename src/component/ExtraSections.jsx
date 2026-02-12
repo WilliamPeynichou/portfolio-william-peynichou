@@ -36,9 +36,11 @@ export function PhotographySection() {
       <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-4 opacity-60 hover:opacity-100 transition-opacity duration-500">
         {previewImages.map((img, i) => (
           <div key={i} className="aspect-square bg-gray-900 rounded-lg overflow-hidden">
-             <img 
+             <img
                src={img}
                alt={`Preview ${i + 1}`}
+               loading="lazy"
+               decoding="async"
                className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500"
              />
           </div>

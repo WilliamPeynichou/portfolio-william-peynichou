@@ -1,24 +1,24 @@
-// Export de toutes les images de la galerie
-import AngletKid from './AngletKid.png'
-import Basketball from './Basketball.png'
-import BiarritzPlage from './BiarritzPlage.png'
-import Camel from './Camel.png'
-import Cherie from './Cherie.png'
-import Door from './Door.png'
-import KoreanGuy from './KoreanGuy.png'
-import KoreanLoves from './KoreanLoves.png'
-import Lacanau from './Lacanau.png'
-import Lewis from './Lewis.png'
-import ManWithDog from './ManWithDog.png'
-import MarraScoot from './MarraScoot.png'
-import mbappeKid from './mbappeKid.png'
-import MenInTheCity from './MenInTheCity.png'
-import MoroccoMirors from './MoroccoMirors.png'
-import OysterParc from './OysterParc.png'
-import PlaneFlowers from './PlaneFlowers.png'
-import PrahaSnowTrain from './PrahaSnowTrain.png'
-import SnowKid from './SnowKid.png'
-import SurfBlur from './SurfBlur.png'
+// Export de toutes les images de la galerie (format WebP optimisé)
+import AngletKid from './AngletKid.webp'
+import Basketball from './Basketball.webp'
+import BiarritzPlage from './BiarritzPlage.webp'
+import Camel from './Camel.webp'
+import Cherie from './Cherie.webp'
+import Door from './Door.webp'
+import KoreanGuy from './KoreanGuy.webp'
+import KoreanLoves from './KoreanLoves.webp'
+import Lacanau from './Lacanau.webp'
+import Lewis from './Lewis.webp'
+import ManWithDog from './ManWithDog.webp'
+import MarraScoot from './MarraScoot.webp'
+import mbappeKid from './mbappeKid.webp'
+import MenInTheCity from './MenInTheCity.webp'
+import MoroccoMirors from './MoroccoMirors.webp'
+import OysterParc from './OysterParc.webp'
+import PlaneFlowers from './PlaneFlowers.webp'
+import PrahaSnowTrain from './PrahaSnowTrain.webp'
+import SnowKid from './SnowKid.webp'
+import SurfBlur from './SurfBlur.webp'
 
 export {
   AngletKid,
@@ -42,4 +42,3 @@ export {
   SnowKid,
   SurfBlur
 }
-

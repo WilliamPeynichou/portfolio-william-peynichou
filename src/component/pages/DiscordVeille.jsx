@@ -7,11 +7,11 @@ import Header from '@/component/layout/header'
 import ImageModal from '@/component/ImageModal'
 
 // Import des images techniques
-import WorkflowBotVeille from '@/assets/WorkflowBotVeille.png'
-import WorkflowInputBotVeilleDiscord from '@/assets/WorkflowInputBotVeilleDiscord.png'
-import WorkflowOutputBotVeilleDiscord from '@/assets/WorkflowOutputBotVeilleDiscord.png'
-import WorkflowRep1BotDiscord from '@/assets/WorkflowRep1BotDiscord.png'
-import WorkflowRep2BotDiscord from '@/assets/WorkflowRep2BotDiscord.png.png'
+import WorkflowBotVeille from '@/assets/WorkflowBotVeille.webp'
+import WorkflowInputBotVeilleDiscord from '@/assets/WorkflowInputBotVeilleDiscord.webp'
+import WorkflowOutputBotVeilleDiscord from '@/assets/WorkflowOutputBotVeilleDiscord.webp'
+import WorkflowRep1BotDiscord from '@/assets/WorkflowRep1BotDiscord.webp'
+import WorkflowRep2BotDiscord from '@/assets/WorkflowRep2BotDiscord.webp'
 
 function TitleOpener({ title, titleOpacity, subtitle, language }) {
   const [displayText, setDisplayText] = useState(title)
@@ -112,16 +112,24 @@ function DiscordVeille() {
   }, [workflow, navigate])
 
   useEffect(() => {
+    let rafId = null
     const handleScroll = () => {
-      const scrollY = window.scrollY
-      const windowHeight = window.innerHeight
-      const progress = Math.min(scrollY / windowHeight, 1)
-      setScrollProgress(progress)
-      setTitleOpacity(Math.max(0, 1 - progress * 2))
+      if (rafId) return
+      rafId = requestAnimationFrame(() => {
+        const scrollY = window.scrollY
+        const windowHeight = window.innerHeight
+        const progress = Math.min(scrollY / windowHeight, 1)
+        setScrollProgress(progress)
+        setTitleOpacity(Math.max(0, 1 - progress * 2))
+        rafId = null
+      })
     }
 
-    window.addEventListener('scroll', handleScroll)
-    return () => window.removeEventListener('scroll', handleScroll)
+    window.addEventListener('scroll', handleScroll, { passive: true })
+    return () => {
+      window.removeEventListener('scroll', handleScroll)
+      if (rafId) cancelAnimationFrame(rafId)
+    }
   }, [])
 
   if (!workflow) return null
