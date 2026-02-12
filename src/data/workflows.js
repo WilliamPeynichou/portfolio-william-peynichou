@@ -5,7 +5,7 @@ export const workflows = [
     title: 'Velo Expert',
     type: 'AI Agent & Automation',
     year: '2025',
-    image: '/assets/profile.png', // Placeholder
+    image: '/assets/profile.webp', // Placeholder
     description: {
       fr: "Un agent spécialisé dans l'expertise technique et le conseil pour les passionnés de cyclisme, optimisé par n8n.",
       en: "A specialized agent for technical expertise and advice for cycling enthusiasts, powered by n8n."
@@ -18,7 +18,7 @@ export const workflows = [
     title: 'Assistant Sport Nutrition',
     type: 'AI Health Coach',
     year: '2025',
-    image: '/assets/profile.png', // Placeholder
+    image: '/assets/profile.webp', // Placeholder
     description: {
       fr: "Assistant intelligent analysant vos besoins nutritionnels en fonction de votre activité physique réelle.",
       en: "Intelligent assistant analyzing your nutritional needs based on your actual physical activity."
@@ -31,7 +31,7 @@ export const workflows = [
     title: 'Bot Veille Discord',
     type: 'Automation & Scraping',
     year: '2025',
-    image: '/assets/profile.png', // Placeholder
+    image: '/assets/profile.webp', // Placeholder
     description: {
       fr: "Bot de veille automatisé scrutant le web pour centraliser les actualités tech sur un serveur Discord.",
       en: "Automated monitoring bot scanning the web to centralize tech news on a Discord server."

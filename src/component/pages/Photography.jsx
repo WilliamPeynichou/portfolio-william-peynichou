@@ -79,9 +79,11 @@ function Photography() {
               className="relative group break-inside-avoid overflow-hidden rounded-lg cursor-zoom-in"
               onClick={() => setSelectedImage({ src: photo.src, alt: photo.title })}
             >
-              <img 
-                src={photo.src} 
+              <img
+                src={photo.src}
                 alt={photo.title}
+                loading="lazy"
+                decoding="async"
                 className="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-105"
               />
               <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">

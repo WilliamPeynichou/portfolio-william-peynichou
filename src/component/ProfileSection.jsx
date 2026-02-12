@@ -1,8 +1,8 @@
 import { useState } from 'react'
 import { useLanguage } from '@/context/LanguageContext'
 import ImageModal from '@/component/ImageModal'
-import profileImage from '@/assets/profile.png'
-import cvImage from '@/assets/cv.png'
+import profileImage from '@/assets/profile.webp'
+import cvImage from '@/assets/cv.webp'
 
 function ProfileSection() {
   const { language } = useLanguage()
@@ -40,9 +40,11 @@ function ProfileSection() {
         >
           <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent z-10" />
           
-          <img 
-            src={profileImage} 
-            alt="William Peynichou" 
+          <img
+            src={profileImage}
+            alt="William Peynichou"
+            loading="lazy"
+            decoding="async"
             className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
           />
           
@@ -72,7 +74,7 @@ function ProfileSection() {
             <div className="flex flex-col sm:flex-row gap-4">
               <a 
                 href={cvImage} 
-                download="CV_William_Peynichou.png"
+                download="CV_William_Peynichou.webp"
                 className="flex-1 px-6 py-4 rounded-full bg-white text-black font-medium hover:bg-gray-200 transition-colors flex items-center justify-center gap-2 cursor-pointer"
               >
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -98,9 +100,11 @@ function ProfileSection() {
               className="w-full bg-gray-900 rounded-lg overflow-hidden border border-white/10 group cursor-zoom-in" 
               onClick={() => setSelectedImage({ src: cvImage, alt: "CV Preview" })}
             >
-              <img 
-                src={cvImage} 
-                alt="CV Preview" 
+              <img
+                src={cvImage}
+                alt="CV Preview"
+                loading="lazy"
+                decoding="async"
                 className="w-full h-auto opacity-80 group-hover:opacity-100 transition-opacity duration-300"
               />
             </div>

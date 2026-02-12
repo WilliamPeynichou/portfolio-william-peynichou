@@ -206,20 +206,28 @@ function ProjetAtIfit() {
   }, [project, navigate])
 
   useEffect(() => {
+    let rafId = null
     const handleScroll = () => {
-      const scrollY = window.scrollY
-      const windowHeight = window.innerHeight
-      
-      // Progress de 0 à 1 sur la première fenêtre
-      const progress = Math.min(scrollY / windowHeight, 1)
-      setScrollProgress(progress)
-      
-      // Le titre disparaît progressivement
-      setTitleOpacity(Math.max(0, 1 - progress * 2))
+      if (rafId) return
+      rafId = requestAnimationFrame(() => {
+        const scrollY = window.scrollY
+        const windowHeight = window.innerHeight
+
+        // Progress de 0 à 1 sur la première fenêtre
+        const progress = Math.min(scrollY / windowHeight, 1)
+        setScrollProgress(progress)
+
+        // Le titre disparaît progressivement
+        setTitleOpacity(Math.max(0, 1 - progress * 2))
+        rafId = null
+      })
     }
 
-    window.addEventListener('scroll', handleScroll)
-    return () => window.removeEventListener('scroll', handleScroll)
+    window.addEventListener('scroll', handleScroll, { passive: true })
+    return () => {
+      window.removeEventListener('scroll', handleScroll)
+      if (rafId) cancelAnimationFrame(rafId)
+    }
   }, [])
 
   if (!project) return null
