@@ -38,7 +38,7 @@ jobs:
           server-dir: /williampeynichou.fr/
           security: loose
           log-level: verbose
-          dangerous-clean-slate: false
+          dangerous-clean-slate: true
           exclude: |
             **/.git*
             **/.git*/**
