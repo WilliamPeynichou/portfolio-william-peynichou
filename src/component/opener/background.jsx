@@ -1,12 +1,9 @@
 import { ShaderGradientCanvas, ShaderGradient } from '@shadergradient/react'
 
-function Background({ zoom = 1, visible = true }) {
-  // Ne pas rendre le canvas WebGL s'il n'est plus visible (après le scroll)
-  if (!visible) return null
-
+function Background() {
   return (
     <ShaderGradientCanvas
-      className="fixed top-0 left-0 w-full h-full z-[1] pointer-events-none"
+      className="absolute top-0 left-0 w-full h-full pointer-events-none"
       pixelDensity={1}
       fov={45}
     >
@@ -17,7 +14,7 @@ function Background({ zoom = 1, visible = true }) {
         cAzimuthAngle={250}
         cDistance={1.5}
         cPolarAngle={140}
-        cameraZoom={4.5 * zoom}
+        cameraZoom={4.5}
         color1="#809bd6"
         color2="#910aff"
         color3="#af38ff"
