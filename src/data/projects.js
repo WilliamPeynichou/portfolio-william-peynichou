@@ -4,15 +4,6 @@ import FormAddWeightAtIfit from '@/assets/FormAddWeightAt-Ifit.webp'
 import GraphiqueWeightAtIfit from '@/assets/GraphiqueWeightAt-Ifit.webp'
 import N8nAtIfit from '@/assets/8nAt-Ifit.webp'
 
-// Youtube Design (PY) Imports
-import HomePY from '@/assets/HomePY.webp'
-import LoginPY from '@/assets/LoginPY.webp'
-import AddVideoPY from '@/assets/AddVideoPY.webp'
-import AdminPY from '@/assets/AdminPY.webp'
-import CommPY from '@/assets/CommPY.webp'
-import ListVideoPY from '@/assets/ListVideoPY.webp'
-import PageVideoPY from '@/assets/PageVideoPY.webp'
-
 export const projects = [
   {
     id: 1,
@@ -59,25 +50,19 @@ export const projects = [
   },
   {
     id: 3,
-    slug: 'youtube-design',
-    title: "Youtube Design",
-    type: "Video website with Artistic Direction",
-    year: "2025",
-    image: HomePY,
+    slug: 'commis',
+    title: "Commis",
+    type: "Recipe Planner with Claude AI",
+    year: "2026",
+    image: "https://images.unsplash.com/photo-1466637574441-749b8f19452f?q=80&w=2680&auto=format&fit=crop",
     description: {
-      fr: "Une plateforme de streaming vidéo inspirée de YouTube, mettant l'accent sur une interface utilisateur épurée et une direction artistique moderne. Le projet inclut une gestion complète des vidéos, des commentaires et un panneau d'administration.",
-      en: "A video streaming platform inspired by YouTube, focusing on a clean user interface and modern artistic direction. The project includes full video management, comments, and an admin panel."
+      fr: "Commis est un planificateur de recettes intelligent propulsé par Claude (Anthropic). L'application permet de générer, organiser et planifier des recettes personnalisées grâce à un assistant IA intégré.\n\nL'architecture repose sur un monorepo avec un frontend React/TypeScript déployé sur Vercel et un backend Express/Prisma hébergé sur Railway. L'IA analyse les préférences culinaires et génère des suggestions adaptées en temps réel.",
+      en: "Commis is an intelligent recipe planner powered by Claude (Anthropic). The app lets users generate, organize, and plan personalized recipes through an integrated AI assistant.\n\nThe architecture is a monorepo with a React/TypeScript frontend deployed on Vercel and an Express/Prisma backend hosted on Railway. The AI analyses culinary preferences and generates tailored suggestions in real time."
     },
-    technologies: ["React", "CSS Modules", "Node.js", "Express", "MySQL"],
-    githubLink: null,
-    gallery: [
-      LoginPY,
-      PageVideoPY,
-      ListVideoPY,
-      AddVideoPY,
-      CommPY,
-      AdminPY
-    ]
+    technologies: ["React", "TypeScript", "Tailwind CSS", "Framer Motion", "Express", "Prisma", "Claude AI", "Railway", "Vercel"],
+    liveLink: "https://commis-frontend.vercel.app/",
+    githubLink: "https://github.com/WilliamPeynichou/Commis",
+    gallery: []
   },
   {
     id: 4,
