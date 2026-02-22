@@ -4,7 +4,6 @@ import { useLanguage } from '@/context/LanguageContext'
 import { projects } from '@/data/projects'
 import Footer from '@/component/layout/footer'
 import Header from '@/component/layout/header'
-import ImageModal from '@/component/ImageModal'
 
 function TitleOpener({ title, titleOpacity, subtitle }) {
   const [displayText, setDisplayText] = useState(title)
@@ -59,7 +58,6 @@ function Commis() {
   const navigate = useNavigate()
   const [titleOpacity, setTitleOpacity] = useState(1)
   const [scrollProgress, setScrollProgress] = useState(0)
-  const [selectedImage, setSelectedImage] = useState(null)
 
   const project = projects.find(p => p.slug === 'commis')
 
@@ -129,15 +127,14 @@ function Commis() {
               </p>
             </div>
 
-            {/* Cover image */}
-            <div
-              className="w-full md:w-1/2 mx-auto aspect-video rounded-lg overflow-hidden bg-gray-900 mb-20 cursor-zoom-in"
-              onClick={() => setSelectedImage(project.image)}
-            >
-              <img
-                src={project.image}
-                alt={project.title}
-                className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
+            {/* Live preview iframe */}
+            <div className="w-full md:w-3/4 mx-auto mb-20 rounded-xl overflow-hidden border border-white/10 shadow-2xl bg-gray-900" style={{ aspectRatio: '16/10' }}>
+              <iframe
+                src="https://commis-frontend.vercel.app/"
+                title="Commis — Live Preview"
+                className="w-full h-full border-0"
+                loading="lazy"
+                allow="clipboard-write"
               />
             </div>
 
@@ -207,12 +204,6 @@ function Commis() {
         </div>
       </div>
 
-      <ImageModal
-        isOpen={!!selectedImage}
-        onClose={() => setSelectedImage(null)}
-        imageSrc={selectedImage}
-        altText={project.title}
-      />
     </div>
   )
 }
