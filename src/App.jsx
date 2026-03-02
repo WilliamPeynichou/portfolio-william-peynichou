@@ -15,6 +15,7 @@ const MarsIA = lazy(() => import('./component/pages/MarsIA'))
 const VeloExpert = lazy(() => import('./component/pages/VeloExpert'))
 const NutritionAssistant = lazy(() => import('./component/pages/NutritionAssistant'))
 const DiscordVeille = lazy(() => import('./component/pages/DiscordVeille'))
+const TrouveTaBoite = lazy(() => import('./component/pages/TrouveTaBoite'))
 
 function PageLoader() {
   return (
@@ -38,6 +39,7 @@ function App() {
           <Route path="/project/youtube-design" element={<YoutubeLike />} />
           <Route path="/project/portfolio" element={<PortfolioProject />} />
           <Route path="/project/mars-ia" element={<MarsIA />} />
+          <Route path="/project/trouve-ta-boite" element={<TrouveTaBoite />} />
           <Route path="/workflow/velo-expert" element={<VeloExpert />} />
           <Route path="/workflow/assistant-sport-nutrition" element={<NutritionAssistant />} />
           <Route path="/workflow/bot-veille-discord" element={<DiscordVeille />} />

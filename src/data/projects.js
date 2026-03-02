@@ -108,5 +108,21 @@ export const projects = [
     technologies: ["React", "CSS", "Design"],
     githubLink: "https://github.com/WilliamPeynichou/marsIA",
     gallery: []
+  },
+  {
+    id: 6,
+    slug: 'trouve-ta-boite',
+    title: "TrouveTaBoite",
+    type: "Company Search Engine by Location & Activity",
+    year: "2025",
+    image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2670&auto=format&fit=crop",
+    description: {
+      fr: "TrouveTaBoite est un moteur de recherche d'entreprises et d'associations basé sur une zone géographique et un domaine d'activité.\n\nLe principe est volontairement simple : un lieu, un rayon, un secteur d'activité — et tu obtiens toutes les entreprises autour de toi, avec leurs coordonnées.\n\nLe site exploite des APIs officielles du gouvernement français (open data), offrant des données légales et fiables. Utile pour un stagiaire qui cherche une entreprise à démarcher, un alternant en recherche de contrat, ou un patron qui a besoin d'un freelance à proximité.\n\nC'est un projet full-stack construit avec Node.js/Express en back-end et Vue.js avec TypeScript en front-end.",
+      en: "TrouveTaBoite is a company and association search engine based on geographic area and business sector.\n\nThe concept is intentionally simple: a location, a radius, an activity sector — and you get all the companies around you, with their contact details.\n\nThe site leverages official French government APIs (open data), providing legal and reliable data. Useful for an intern looking for companies to contact, a work-study student seeking a contract, or a business owner needing a nearby freelancer.\n\nIt's a full-stack project built with Node.js/Express on the back-end and Vue.js with TypeScript on the front-end."
+    },
+    technologies: ["Vue.js", "TypeScript", "Node.js", "Express", "API Gouvernement"],
+    githubLink: null,
+    siteLink: "https://trouvetaboite.com",
+    gallery: []
   }
 ]
