@@ -246,6 +246,50 @@ This is my first real full-stack project. It's far from perfect. But it meets a 
               </div>
             </div>
 
+            {/* KPI Section */}
+            <div className="mb-24">
+              <h3 className="text-sm font-mono text-gray-500 uppercase tracking-widest mb-10">
+                {language === 'fr' ? 'Chiffres clés' : 'Key Metrics'}
+              </h3>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                {/* Users */}
+                <div className="relative group rounded-2xl border border-white/10 bg-white/5 p-8 text-center transition-all hover:border-white/25 hover:bg-white/10">
+                  <p className="text-5xl md:text-6xl font-bold tracking-tight bg-gradient-to-r from-white to-gray-400 bg-clip-text text-transparent">
+                    1 000
+                  </p>
+                  <p className="text-sm font-mono text-gray-400 uppercase tracking-widest mt-4">
+                    {language === 'fr' ? 'Utilisateurs / mois' : 'Monthly users'}
+                  </p>
+                </div>
+
+                {/* Cost */}
+                <div className="relative group rounded-2xl border border-white/10 bg-white/5 p-8 text-center transition-all hover:border-white/25 hover:bg-white/10">
+                  <p className="text-5xl md:text-6xl font-bold tracking-tight bg-gradient-to-r from-white to-gray-400 bg-clip-text text-transparent">
+                    1€<span className="text-2xl text-gray-500">/mois</span>
+                  </p>
+                  <p className="text-sm font-mono text-gray-400 uppercase tracking-widest mt-4">
+                    {language === 'fr' ? 'Coût de production' : 'Production cost'}
+                  </p>
+                  <p className="text-xs text-gray-500 mt-2">
+                    Railway (backend) + Vercel (frontend)
+                  </p>
+                </div>
+
+                {/* Google Ads */}
+                <div className="relative group rounded-2xl border border-white/10 bg-white/5 p-8 text-center transition-all hover:border-white/25 hover:bg-white/10">
+                  <p className="text-5xl md:text-6xl font-bold tracking-tight bg-gradient-to-r from-white to-gray-400 bg-clip-text text-transparent">
+                    Ads
+                  </p>
+                  <p className="text-sm font-mono text-gray-400 uppercase tracking-widest mt-4">
+                    Google Ads
+                  </p>
+                  <p className="text-xs text-gray-500 mt-2">
+                    {language === 'fr' ? 'Accepté & adapté' : 'Accepted & adapted'}
+                  </p>
+                </div>
+              </div>
+            </div>
+
             {/* Iframe Section */}
             <div className="mb-24">
               <h3 className="text-sm font-mono text-gray-500 uppercase tracking-widest mb-8">
