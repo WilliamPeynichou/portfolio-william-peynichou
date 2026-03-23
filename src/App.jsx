@@ -8,7 +8,6 @@ const Contact = lazy(() => import('./component/pages/Contact'))
 const Photography = lazy(() => import('./component/pages/Photography'))
 const Archives = lazy(() => import('./component/pages/Archives'))
 const ProjetAtIfit = lazy(() => import('./component/pages/ProjetAt-Ifit'))
-const ProjetEcocycle = lazy(() => import('./component/pages/ProjetEcocycle'))
 const Commis = lazy(() => import('./component/pages/Commis'))
 const PortfolioProject = lazy(() => import('./component/pages/PortfolioProject'))
 const MarsIA = lazy(() => import('./component/pages/MarsIA'))
@@ -34,7 +33,6 @@ function App() {
           <Route path="/photography" element={<Photography />} />
           <Route path="/archives" element={<Archives />} />
           <Route path="/project/at-ifit" element={<ProjetAtIfit />} />
-          <Route path="/project/ecocycle" element={<ProjetEcocycle />} />
           <Route path="/project/commis" element={<Commis />} />
           <Route path="/project/portfolio" element={<PortfolioProject />} />
           <Route path="/project/mars-ia" element={<MarsIA />} />

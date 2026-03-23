@@ -21,7 +21,7 @@ const Home = () => {
 
       {/* 3. Le contenu qui scrolle par-dessus l'Opener */}
       {/* mt-[200vh] pousse le contenu après 2 fenêtres (2 phases : zoom + disparition nom) */}
-      <div className="relative z-10 mt-[200vh]">
+      <div className="relative z-10 mt-[100vh]">
         
         {/* Container principal avec fond blanc et effet de carte arrondie */}
         <div className="min-h-screen rounded-t-[3rem] shadow-[0_-20px_60px_rgba(0,0,0,0)] bg-black">

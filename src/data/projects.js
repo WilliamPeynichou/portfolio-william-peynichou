@@ -25,6 +25,7 @@ export const projects = [
       "MySQL",
       "Bore Tunnel"
     ],
+    liveLink: "https://atifit.up.railway.app/",
     githubLink: "https://github.com/WilliamPeynichou/At-ifit",
     n8nImage: N8nAtIfit,
     gallery: [
@@ -34,21 +35,6 @@ export const projects = [
     ]
   },
   {
-    id: 2,
-    slug: 'ecocycle',
-    title: "Ecocycle",
-    type: "E-commerce with chat bot and RAG with n8n",
-    year: "2025",
-    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2670&auto=format&fit=crop",
-    description: {
-      fr: "Plateforme e-commerce écologique intégrant un assistant virtuel intelligent.",
-      en: "Eco-friendly e-commerce platform integrating an intelligent virtual assistant."
-    },
-    technologies: ["React", "Node.js", "n8n", "MongoDB"],
-    githubLink: null,
-    gallery: []
-  },
-  {
     id: 3,
     slug: 'commis',
     title: "Commis",
@@ -56,10 +42,10 @@ export const projects = [
     year: "2026",
     image: "https://images.unsplash.com/photo-1466637574441-749b8f19452f?q=80&w=2680&auto=format&fit=crop",
     description: {
-      fr: "Commis est un planificateur de recettes intelligent propulsé par Claude (Anthropic). L'application permet de générer, organiser et planifier des recettes personnalisées grâce à un assistant IA intégré.\n\nL'architecture repose sur un monorepo avec un frontend React/TypeScript déployé sur Vercel et un backend Express/Prisma hébergé sur Railway. L'IA analyse les préférences culinaires et génère des suggestions adaptées en temps réel.",
-      en: "Commis is an intelligent recipe planner powered by Claude (Anthropic). The app lets users generate, organize, and plan personalized recipes through an integrated AI assistant.\n\nThe architecture is a monorepo with a React/TypeScript frontend deployed on Vercel and an Express/Prisma backend hosted on Railway. The AI analyses culinary preferences and generates tailored suggestions in real time."
+      fr: "Commis est un planificateur de recettes intelligent propulsé par Claude Haiku (Anthropic). L'application génère, organise et planifie des recettes personnalisées grâce à un assistant IA intégré.\n\nChaque appel à l'API Haiku 4.5 enrichit automatiquement une base de données vectorielle. Avec le temps, les requêtes similaires sont résolues directement depuis cette mémoire sémantique — sans appel API — rendant l'application progressivement autonome et moins coûteuse.\n\nL'architecture est un monorepo : frontend React/TypeScript sur Vercel, backend Express/Prisma sur Railway avec PostgreSQL + pgvector.",
+      en: "Commis is an intelligent recipe planner powered by Claude Haiku (Anthropic). The app lets users generate, organize, and plan personalized recipes through an integrated AI assistant.\n\nEvery Haiku 4.5 API call automatically enriches a vector database. Over time, similar queries are resolved directly from this semantic memory — no API call needed — making the app progressively autonomous and cheaper to run.\n\nThe architecture is a monorepo: React/TypeScript frontend on Vercel, Express/Prisma backend on Railway with PostgreSQL + pgvector."
     },
-    technologies: ["React", "TypeScript", "Tailwind CSS", "Framer Motion", "Express", "Prisma", "Claude AI", "Railway", "Vercel"],
+    technologies: ["React", "TypeScript", "Tailwind CSS", "Framer Motion", "Express", "Prisma", "Claude Haiku 4.5", "pgvector", "Railway", "Vercel"],
     liveLink: "https://commis-frontend.vercel.app/",
     githubLink: "https://github.com/WilliamPeynichou/Commis",
     gallery: []
