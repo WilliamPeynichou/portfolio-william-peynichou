@@ -22,6 +22,21 @@ export const projects = [
     gallery: []
   },
   {
+    id: 6,
+    slug: 'bot-veille-py',
+    title: "BotVeillePy",
+    type: "Discord Bot — Python Automation",
+    year: "2025",
+    image: "https://images.unsplash.com/photo-1614680376573-df3480f0c6ff?q=80&w=2574&auto=format&fit=crop",
+    description: {
+      fr: "BotVeillePy est un bot Discord entièrement codé en Python qui automatise la veille technologique. Chaque semaine, il scrute les sources RSS, agrège les actualités, les filtre par pertinence et les publie directement dans les canaux Discord configurés.\n\nContrairement à la version n8n (low-code), ce bot est entièrement programmé : gestion des feeds RSS, planification des tâches, formatage Markdown et intégration Discord via l'API officielle.",
+      en: "BotVeillePy is a Discord bot fully coded in Python that automates tech monitoring. Every week, it scrapes RSS sources, aggregates news, filters by relevance, and publishes directly to configured Discord channels.\n\nUnlike the n8n version (low-code), this bot is fully programmed: RSS feed handling, task scheduling, Markdown formatting, and Discord integration via the official API."
+    },
+    technologies: ["Python", "discord.py", "feedparser", "schedule", "RSS"],
+    githubLink: "https://github.com/WilliamPeynichou/BotVeillePy",
+    gallery: []
+  },
+  {
     id: 1,
     slug: 'at-ifit',
     title: "At Ifit",
