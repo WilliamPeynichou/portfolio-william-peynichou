@@ -7,6 +7,7 @@ import { LanguageProvider } from './context/LanguageContext'
 const Contact = lazy(() => import('./component/pages/Contact'))
 const Photography = lazy(() => import('./component/pages/Photography'))
 const Archives = lazy(() => import('./component/pages/Archives'))
+const TrouveTaBoite = lazy(() => import('./component/pages/TrouveTaBoite'))
 const ProjetAtIfit = lazy(() => import('./component/pages/ProjetAt-Ifit'))
 const Commis = lazy(() => import('./component/pages/Commis'))
 const PortfolioProject = lazy(() => import('./component/pages/PortfolioProject'))
@@ -32,6 +33,7 @@ function App() {
           <Route path="/contact" element={<Contact />} />
           <Route path="/photography" element={<Photography />} />
           <Route path="/archives" element={<Archives />} />
+          <Route path="/project/trouvetaboite" element={<TrouveTaBoite />} />
           <Route path="/project/at-ifit" element={<ProjetAtIfit />} />
           <Route path="/project/commis" element={<Commis />} />
           <Route path="/project/portfolio" element={<PortfolioProject />} />

@@ -6,6 +6,22 @@ import N8nAtIfit from '@/assets/8nAt-Ifit.webp'
 
 export const projects = [
   {
+    id: 0,
+    slug: 'trouvetaboite',
+    title: "TrouveTaBoite",
+    type: "Company Finder — Open Data APIs",
+    year: "2025",
+    image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2670&auto=format&fit=crop",
+    description: {
+      fr: "TrouveTaBoite est un outil de recherche d'entreprises basé sur les données open data du gouvernement français. En quelques clics : un lieu, un rayon, un secteur d'activité — et tu obtiens toutes les entreprises autour de toi avec leurs coordonnées.\n\nL'idée est née d'un constat simple : les meilleurs recrutements passent par la candidature spontanée. Encore faut-il savoir qui contacter. Plutôt que d'utiliser des données privées ou payantes, le projet exploite les APIs officielles et gratuites mises à disposition par les services publics français.\n\nL'application totalise plus de 1 000 utilisateurs par mois et répond à un besoin concret : stagiaires, alternants, freelances et patrons qui cherchent des prestataires à proximité.",
+      en: "TrouveTaBoite is a company search tool built on French government open data. A few clicks — a location, a radius, a business sector — and you get every company around you with their contact details.\n\nThe idea came from a simple observation: the best recruitments happen through direct outreach, not job listings. But that requires knowing who to contact. Rather than using private or paid data, the project leverages the official, free APIs provided by French public services.\n\nThe app reaches over 1,000 users per month and addresses a real need: interns, apprentices, freelancers, and business owners looking for nearby service providers."
+    },
+    technologies: ["React", "Node.js", "Express", "API Sirene", "API Recherche Entreprises", "geo.gouv.fr", "Vercel"],
+    liveLink: "https://trouvetaboite.com",
+    githubLink: "https://github.com/WilliamPeynichou/FindYourCompany",
+    gallery: []
+  },
+  {
     id: 1,
     slug: 'at-ifit',
     title: "At Ifit",

@@ -11,6 +11,7 @@ function Archives() {
   }, [])
 
   const projects = [
+    { year: "2025", name: "TrouveTaBoite", type: "Open Data", tech: "React, Express, APIs gouvernementales", link: "/project/trouvetaboite" },
     { year: "2025", name: "At Ifit", type: "Data App", tech: "RAG, Chatbot", link: "#" },
     { year: "2024", name: "Portfolio v1", type: "Website", tech: "Three.js", link: "#" },
     { year: "2023", name: "Task Master", type: "Productivity", tech: "Vue.js", link: "#" },
