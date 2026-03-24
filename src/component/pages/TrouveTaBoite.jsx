@@ -361,27 +361,48 @@ function TrouveTaBoite() {
               <h3 className="text-sm font-mono text-gray-500 uppercase tracking-widest mb-8">
                 {language === 'fr' ? 'Deploiement' : 'Deployment'}
               </h3>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
                 {[
                   {
                     step: '01',
                     label: 'GitHub',
                     sub: language === 'fr'
-                      ? 'Code versionné sur FindYourCompany. CI/CD déclenché automatiquement sur push main.'
-                      : 'Code versioned on FindYourCompany. CI/CD auto-triggered on main push.',
+                      ? 'Code versionné sur FindYourCompany. CI/CD déclenché automatiquement sur push main vers Vercel et Railway.'
+                      : 'Code versioned on FindYourCompany. CI/CD auto-triggered on main push to Vercel and Railway.',
                   },
                   {
                     step: '02',
-                    label: 'Vercel',
+                    label: 'Vercel — Frontend',
                     sub: language === 'fr'
-                      ? 'Frontend React + backend Express déployés sur Vercel. Domaine custom trouvetaboite.com configuré via DNS. HTTPS inclus.'
-                      : 'React frontend + Express backend deployed on Vercel. Custom domain trouvetaboite.com via DNS. HTTPS included.',
+                      ? 'Frontend React déployé sur Vercel. Build auto-détecté. CDN global, HTTPS inclus.'
+                      : 'React frontend deployed on Vercel. Auto-detected build. Global CDN, HTTPS included.',
                   },
-                ].map((s, i) => (
-                  <div key={i} className="flex flex-col gap-3 p-6 rounded-2xl border border-white/10 bg-white/5">
+                  {
+                    step: '03',
+                    label: 'Railway — Backend',
+                    sub: language === 'fr'
+                      ? 'Backend Express déployé sur Railway. URL publique persistante utilisée comme variable VITE_API_URL sur Vercel.'
+                      : 'Express backend deployed on Railway. Persistent public URL used as VITE_API_URL on Vercel.',
+                  },
+                  {
+                    step: '04',
+                    label: 'O2switch — Domaine',
+                    sub: language === 'fr'
+                      ? 'Nom de domaine trouvetaboite.com acheté sur O2switch. DNS configuré pour pointer vers Vercel (enregistrement A + CNAME).'
+                      : 'Domain trouvetaboite.com purchased on O2switch. DNS configured to point to Vercel (A record + CNAME).',
+                  },
+                ].map((s, i, arr) => (
+                  <div key={i} className="relative flex flex-col gap-3 p-6 rounded-2xl border border-white/10 bg-white/5">
                     <span className="text-xs font-mono text-gray-600">{s.step}</span>
                     <p className="text-sm font-semibold text-white">{s.label}</p>
                     <p className="text-xs text-gray-500 font-mono leading-relaxed">{s.sub}</p>
+                    {i < arr.length - 1 && (
+                      <div className="hidden lg:flex absolute -right-3 top-1/2 -translate-y-1/2 z-10 w-6 h-6 items-center justify-center">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" className="w-4 h-4 text-white/30">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                        </svg>
+                      </div>
+                    )}
                   </div>
                 ))}
               </div>
