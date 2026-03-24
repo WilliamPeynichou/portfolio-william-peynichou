@@ -152,7 +152,7 @@ function BotVeillePy() {
       {/* Hero */}
       <div className="fixed top-0 left-0 w-full h-full z-0 overflow-hidden bg-black">
         <TitleOpener
-          title="BOTVEILEPY"
+          title="BOTVEILLEPY"
           titleOpacity={titleOpacity}
           subtitle={language === 'fr' ? 'Veille tech automatisée — Python' : 'Automated tech monitoring — Python'}
         />
