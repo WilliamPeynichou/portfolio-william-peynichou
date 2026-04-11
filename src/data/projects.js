@@ -6,6 +6,16 @@ import N8nAtIfit from '@/assets/8nAt-Ifit.webp'
 import FiscaliaInterface from '@/assets/Fiscalia-interface.png'
 import FiscaliaResponse from '@/assets/Fiscalia-response.png'
 
+const projectOrder = [
+  'trouvetaboite',
+  'fiscalia',
+  'commis',
+  'bot-veille-py',
+  'mars-ia',
+  'portfolio',
+  'at-ifit',
+]
+
 export const projects = [
   {
     id: 0,
@@ -137,4 +147,4 @@ export const projects = [
     githubLink: "https://github.com/WilliamPeynichou/marsIA",
     gallery: []
   }
-]
+].sort((a, b) => projectOrder.indexOf(a.slug) - projectOrder.indexOf(b.slug))

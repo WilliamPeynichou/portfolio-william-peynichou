@@ -204,28 +204,38 @@ function MarsIA() {
         <section ref={metaRef} className="max-w-7xl mx-auto px-4 md:px-12 mb-48 border-t border-white/10 pt-12">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-12">
             <div className="fade-up-meta opacity-0">
-              <h3 className="text-[10px] font-mono uppercase tracking-[0.2em] text-gray-500 mb-4">Year</h3>
+              <h3 className="text-[10px] font-mono uppercase tracking-[0.2em] text-gray-500 mb-4">
+                {language === 'fr' ? 'Année' : 'Year'}
+              </h3>
               <p className="text-lg font-light">2026</p>
             </div>
             <div className="fade-up-meta opacity-0">
-              <h3 className="text-[10px] font-mono uppercase tracking-[0.2em] text-gray-500 mb-4">Role</h3>
-              <p className="text-lg font-light font-bold text-white">Lead Design</p>
+              <h3 className="text-[10px] font-mono uppercase tracking-[0.2em] text-gray-500 mb-4">
+                {language === 'fr' ? 'Rôle' : 'Role'}
+              </h3>
+              <p className="text-lg font-light font-bold text-white">
+                {language === 'fr' ? 'Lead Design' : 'Lead Design'}
+              </p>
             </div>
             <div className="fade-up-meta opacity-0">
-              <h3 className="text-[10px] font-mono uppercase tracking-[0.2em] text-gray-500 mb-4">Context</h3>
+              <h3 className="text-[10px] font-mono uppercase tracking-[0.2em] text-gray-500 mb-4">
+                {language === 'fr' ? 'Contexte' : 'Context'}
+              </h3>
               <div className="text-lg font-light space-y-1">
-                <p>Maquette / Prototype</p>
-                <p>Film Festival</p>
+                <p>{language === 'fr' ? 'Maquette / Prototype' : 'Mockup / Prototype'}</p>
+                <p>{language === 'fr' ? 'Festival de cinéma' : 'Film Festival'}</p>
               </div>
             </div>
             <div className="fade-up-meta opacity-0">
-              <h3 className="text-[10px] font-mono uppercase tracking-[0.2em] text-gray-500 mb-4">Links</h3>
+              <h3 className="text-[10px] font-mono uppercase tracking-[0.2em] text-gray-500 mb-4">
+                {language === 'fr' ? 'Liens' : 'Links'}
+              </h3>
               <div className="space-y-2">
                 <a href="https://williampeynichou.github.io/marsIA/" target="_blank" rel="noopener noreferrer" className="block text-lg font-light hover:underline decoration-1 underline-offset-4 text-orange-500">
-                  Live Demo
+                  {language === 'fr' ? 'Démo live' : 'Live Demo'}
                 </a>
                 <a href="https://github.com/WilliamPeynichou/marsIA" target="_blank" rel="noopener noreferrer" className="block text-lg font-light hover:underline decoration-1 underline-offset-4 text-white/80">
-                  GitHub Repo
+                  {language === 'fr' ? 'Repo GitHub' : 'GitHub Repo'}
                 </a>
               </div>
             </div>
@@ -239,7 +249,7 @@ function MarsIA() {
           <div className="grid grid-cols-1 md:grid-cols-12 gap-12 items-start">
             <div className="md:col-span-4">
               <h2 className="fade-up-content opacity-0 text-sm font-mono text-gray-500 uppercase tracking-[0.3em]">
-                Design Focus
+                {language === 'fr' ? 'Focus design' : 'Design focus'}
               </h2>
             </div>
             <div className="md:col-span-8">
