@@ -5,6 +5,7 @@ import { useLanguage } from '@/context/LanguageContext'
 import { projects } from '@/data/projects'
 import Footer from '@/component/layout/footer'
 import Header from '@/component/layout/header'
+import PresentationVideo from '@/assets/Presentation.mp4'
 
 function TitleOpener({ title, titleOpacity, subtitle }) {
   const [displayText, setDisplayText] = useState(title)
@@ -195,33 +196,6 @@ function Fiscalia() {
           },
         ]
 
-  const screenshotLabels =
-    language === 'fr'
-      ? [
-          {
-            title: 'Vue conversationnelle',
-            text:
-              "Une interface orientée dossier actif, pensée pour rendre une question fiscale lisible, contextualisée et simple à reprendre côté utilisateur.",
-          },
-          {
-            title: 'Réponse structurée',
-            text:
-              "La réponse n'est pas un simple bloc de texte : elle est hiérarchisée, annotée et organisée pour aider à la compréhension et à la prise d'action.",
-          },
-        ]
-      : [
-          {
-            title: 'Conversation view',
-            text:
-              'An active-case interface designed to make a tax question readable, contextualized, and easy to reuse for the end user.',
-          },
-          {
-            title: 'Structured answer',
-            text:
-              'The answer is not just a text block: it is organized, annotated, and structured to support understanding and action.',
-          },
-        ]
-
   return (
     <div className="relative font-sans text-white bg-black">
       <Header />
@@ -333,40 +307,38 @@ function Fiscalia() {
               </div>
             </div>
 
-            {project.gallery && project.gallery.length > 0 && (
-              <div className="mb-24">
-                <h3 className="text-sm font-mono text-gray-500 uppercase tracking-widest mb-2">
-                  {language === 'fr' ? 'Screens produit' : 'Product screens'}
-                </h3>
-                <p className="text-gray-600 font-mono text-xs mb-10">
-                  {language === 'fr'
-                    ? 'Interface conversationnelle · réponses structurées · expérience documentaire'
-                    : 'Conversational UI · structured answers · documentary experience'}
-                </p>
+            <div className="mb-24">
+              <h3 className="text-sm font-mono text-gray-500 uppercase tracking-widest mb-2">
+                {language === 'fr' ? 'Présentation produit' : 'Product presentation'}
+              </h3>
+              <p className="text-gray-600 font-mono text-xs mb-10">
+                {language === 'fr'
+                  ? 'Démo vidéo · interface conversationnelle · expérience documentaire'
+                  : 'Video demo · conversational interface · documentary experience'}
+              </p>
 
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                  {project.gallery.slice(0, 2).map((image, index) => (
-                    <div key={image} className="rounded-2xl border border-white/10 bg-white/5 p-4 md:p-6">
-                      <div className="rounded-xl overflow-hidden border border-white/10 bg-black">
-                        <img
-                          src={image}
-                          alt={screenshotLabels[index]?.title || project.title}
-                          className="w-full h-auto object-cover"
-                        />
-                      </div>
-                      <div className="mt-5">
-                        <p className="text-xs font-mono text-gray-500 uppercase tracking-widest mb-3">
-                          {screenshotLabels[index]?.title}
-                        </p>
-                        <p className="text-gray-300 text-base font-light leading-relaxed">
-                          {screenshotLabels[index]?.text}
-                        </p>
-                      </div>
-                    </div>
-                  ))}
+              <div className="rounded-2xl border border-white/10 bg-white/5 p-4 md:p-6">
+                <div className="rounded-xl overflow-hidden border border-white/10 bg-black">
+                  <video
+                    src={PresentationVideo}
+                    controls
+                    playsInline
+                    preload="metadata"
+                    className="w-full h-auto"
+                  />
+                </div>
+                <div className="mt-5">
+                  <p className="text-xs font-mono text-gray-500 uppercase tracking-widest mb-3">
+                    {language === 'fr' ? 'Démo interface' : 'Interface demo'}
+                  </p>
+                  <p className="text-gray-300 text-base font-light leading-relaxed">
+                    {language === 'fr'
+                      ? "Une vidéo de démonstration qui montre la navigation dans l'interface, la logique de dossier actif et la manière dont les réponses sont structurées pour rester claires même sur des sujets fiscaux complexes."
+                      : 'A demo video showing the interface flow, the active-case logic, and how answers are structured to remain clear even on complex tax topics.'}
+                  </p>
                 </div>
               </div>
-            )}
+            </div>
 
             <div className="mb-24">
               <h3 className="text-sm font-mono text-gray-500 uppercase tracking-widest mb-2">
