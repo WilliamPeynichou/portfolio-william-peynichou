@@ -56,6 +56,9 @@ function Fiscalia() {
   const navigate = useNavigate()
   const [titleOpacity, setTitleOpacity] = useState(1)
   const [scrollProgress, setScrollProgress] = useState(0)
+  const [isDesktop, setIsDesktop] = useState(false)
+  const [shouldLoadVideo, setShouldLoadVideo] = useState(false)
+  const mediaSectionRef = useRef(null)
 
   const project = projects.find(p => p.slug === 'fiscalia')
 
@@ -84,6 +87,38 @@ function Fiscalia() {
       if (rafId) cancelAnimationFrame(rafId)
     }
   }, [])
+
+  useEffect(() => {
+    const mediaQuery = window.matchMedia('(min-width: 768px)')
+    const syncViewport = (event) => {
+      setIsDesktop(event.matches)
+      if (!event.matches) {
+        setShouldLoadVideo(false)
+      }
+    }
+
+    syncViewport(mediaQuery)
+    mediaQuery.addEventListener('change', syncViewport)
+
+    return () => mediaQuery.removeEventListener('change', syncViewport)
+  }, [])
+
+  useEffect(() => {
+    if (!isDesktop || !mediaSectionRef.current) return
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setShouldLoadVideo(true)
+          observer.disconnect()
+        }
+      },
+      { rootMargin: '200px 0px' }
+    )
+
+    observer.observe(mediaSectionRef.current)
+    return () => observer.disconnect()
+  }, [isDesktop])
 
   if (!project) return null
 
@@ -307,34 +342,69 @@ function Fiscalia() {
               </div>
             </div>
 
-            <div className="mb-24">
+            <div ref={mediaSectionRef} className="mb-24">
               <h3 className="text-sm font-mono text-gray-500 uppercase tracking-widest mb-2">
                 {language === 'fr' ? 'Présentation produit' : 'Product presentation'}
               </h3>
               <p className="text-gray-600 font-mono text-xs mb-10">
                 {language === 'fr'
-                  ? 'Démo vidéo · interface conversationnelle · expérience documentaire'
-                  : 'Video demo · conversational interface · documentary experience'}
+                  ? 'Démo vidéo lazy-load sur desktop · preview statique sur mobile'
+                  : 'Lazy-loaded video on desktop · static preview on mobile'}
               </p>
 
               <div className="rounded-2xl border border-white/10 bg-white/5 p-4 md:p-6">
                 <div className="rounded-xl overflow-hidden border border-white/10 bg-black">
-                  <video
-                    src={PresentationVideo}
-                    controls
-                    playsInline
-                    preload="metadata"
-                    className="w-full h-auto"
-                  />
+                  {isDesktop ? (
+                    shouldLoadVideo ? (
+                      <video
+                        controls
+                        playsInline
+                        preload="metadata"
+                        poster={project.image}
+                        className="w-full h-auto"
+                      >
+                        <source src={PresentationVideo} type="video/mp4" />
+                      </video>
+                    ) : (
+                      <div className="relative">
+                        <img
+                          src={project.image}
+                          alt={project.title}
+                          className="w-full h-auto object-cover"
+                        />
+                        <div className="absolute inset-0 flex items-center justify-center bg-black/35">
+                          <div className="px-4 py-2 rounded-full border border-white/20 bg-black/60 text-xs font-mono text-white/80">
+                            {language === 'fr' ? 'Chargement de la vidéo…' : 'Loading video…'}
+                          </div>
+                        </div>
+                      </div>
+                    )
+                  ) : (
+                    <img
+                      src={project.image}
+                      alt={project.title}
+                      className="w-full h-auto object-cover"
+                    />
+                  )}
                 </div>
                 <div className="mt-5">
                   <p className="text-xs font-mono text-gray-500 uppercase tracking-widest mb-3">
-                    {language === 'fr' ? 'Démo interface' : 'Interface demo'}
+                    {isDesktop
+                      ? (language === 'fr' ? 'Démo interface' : 'Interface demo')
+                      : (language === 'fr' ? 'Preview mobile' : 'Mobile preview')}
                   </p>
                   <p className="text-gray-300 text-base font-light leading-relaxed">
-                    {language === 'fr'
-                      ? "Une vidéo de démonstration qui montre la navigation dans l'interface, la logique de dossier actif et la manière dont les réponses sont structurées pour rester claires même sur des sujets fiscaux complexes."
-                      : 'A demo video showing the interface flow, the active-case logic, and how answers are structured to remain clear even on complex tax topics.'}
+                    {isDesktop
+                      ? (
+                          language === 'fr'
+                            ? "La vidéo n'est chargée que quand la section approche du viewport. Cela garde une démo complète sur desktop tout en évitant d'alourdir inutilement le chargement initial."
+                            : 'The video only loads once the section gets close to the viewport. This keeps the full demo on desktop while avoiding unnecessary weight during initial load.'
+                        )
+                      : (
+                          language === 'fr'
+                            ? "Sur mobile, la page affiche une preview statique de l'interface pour éviter de charger automatiquement une vidéo trop lourde et garder une navigation plus fluide."
+                            : 'On mobile, the page shows a static interface preview to avoid automatically loading a heavy video and keep navigation smoother.'
+                        )}
                   </p>
                 </div>
               </div>
