@@ -11,6 +11,7 @@ const TrouveTaBoite = lazy(() => import('./component/pages/TrouveTaBoite'))
 const BotVeillePy = lazy(() => import('./component/pages/BotVeillePy'))
 const ProjetAtIfit = lazy(() => import('./component/pages/ProjetAt-Ifit'))
 const Commis = lazy(() => import('./component/pages/Commis'))
+const Fiscalia = lazy(() => import('./component/pages/Fiscalia'))
 const PortfolioProject = lazy(() => import('./component/pages/PortfolioProject'))
 const MarsIA = lazy(() => import('./component/pages/MarsIA'))
 const VeloExpert = lazy(() => import('./component/pages/VeloExpert'))
@@ -38,6 +39,7 @@ function App() {
           <Route path="/project/bot-veille-py" element={<BotVeillePy />} />
           <Route path="/project/at-ifit" element={<ProjetAtIfit />} />
           <Route path="/project/commis" element={<Commis />} />
+          <Route path="/project/fiscalia" element={<Fiscalia />} />
           <Route path="/project/portfolio" element={<PortfolioProject />} />
           <Route path="/project/mars-ia" element={<MarsIA />} />
           <Route path="/workflow/velo-expert" element={<VeloExpert />} />

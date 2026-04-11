@@ -3,6 +3,8 @@ import HomeAtIfit from '@/assets/HomeAt-Ifit.webp'
 import FormAddWeightAtIfit from '@/assets/FormAddWeightAt-Ifit.webp'
 import GraphiqueWeightAtIfit from '@/assets/GraphiqueWeightAt-Ifit.webp'
 import N8nAtIfit from '@/assets/8nAt-Ifit.webp'
+import FiscaliaInterface from '@/assets/Fiscalia-interface.png'
+import FiscaliaResponse from '@/assets/Fiscalia-response.png'
 
 export const projects = [
   {
@@ -80,6 +82,30 @@ export const projects = [
     liveLink: "https://commis-frontend.vercel.app/",
     githubLink: "https://github.com/WilliamPeynichou/Commis",
     gallery: []
+  },
+  {
+    id: 7,
+    slug: 'fiscalia',
+    title: "Fiscalia",
+    type: "French Tax AI Agent — RAG & Vector Search",
+    year: "2026",
+    image: FiscaliaInterface,
+    description: {
+      fr: "Fiscalia est un agent IA spécialisé dans la fiscalité et la bureaucratie française. L'objectif côté produit est simple : transformer des démarches complexes en réponses compréhensibles, actionnables et contextualisées.\n\nSous le capot, le projet repose sur un pipeline RAG complet avec base de données vectorielle, embeddings Voyage AI, PostgreSQL + pgvector et une interface web Next.js pensée pour un usage conversationnel fluide.",
+      en: "Fiscalia is an AI agent focused on French tax and administrative topics. From a product perspective, the goal is simple: turn complex procedures into understandable, actionable, and contextualized answers.\n\nUnder the hood, the project relies on a full RAG pipeline with a vector database, Voyage AI embeddings, PostgreSQL + pgvector, and a Next.js web interface designed for smooth conversational use."
+    },
+    technologies: [
+      "Next.js 15",
+      "React 19",
+      "Claude Sonnet 4.6",
+      "Voyage AI",
+      "PostgreSQL 16",
+      "pgvector",
+      "Drizzle ORM",
+      "Docker Compose"
+    ],
+    githubLink: "https://github.com/WilliamPeynichou/fiscalia",
+    gallery: [FiscaliaInterface, FiscaliaResponse]
   },
   {
     id: 4,
