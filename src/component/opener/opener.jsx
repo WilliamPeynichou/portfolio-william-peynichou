@@ -1,7 +1,15 @@
+import { lazy, Suspense } from 'react'
+
+const Background = lazy(() => import('./background'))
+
 function Opener() {
   return (
-    <div className="fixed top-0 left-0 w-full h-full z-0 bg-black flex items-end justify-center pb-10">
-      <div className="animate-bounce">
+    <div className="fixed top-0 left-0 w-full h-full z-0 bg-black">
+      <Suspense fallback={null}>
+        <Background />
+      </Suspense>
+
+      <div className="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce" style={{ zIndex: 20 }}>
         <svg
           xmlns="http://www.w3.org/2000/svg"
           className="w-8 h-8 text-white/70"

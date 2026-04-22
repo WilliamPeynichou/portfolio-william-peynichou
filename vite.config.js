@@ -16,7 +16,7 @@ export default defineConfig({
         // Syntaxe objet : Rollup garantit l'ordre d'initialisation des chunks
         manualChunks: {
           'vendor-react': ['react', 'react-dom', 'react-router-dom'],
-          'vendor-three': ['three', '@shadergradient/react'],
+          'vendor-three': ['three', '@react-three/fiber', '@react-three/drei'],
         }
       }
     },

@@ -1,55 +1,47 @@
-import { ShaderGradientCanvas, ShaderGradient } from '@shadergradient/react'
+import { useRef, useEffect, Suspense } from 'react'
+import { Canvas, useFrame } from '@react-three/fiber'
+import { useGLTF, Environment, ContactShadows } from '@react-three/drei'
+import { useLoading } from '../../context/LoadingContext'
+
+function Model() {
+  const { scene } = useGLTF('/models/bonhomme.glb')
+  const { setLoaded } = useLoading()
+  const ref = useRef()
+  const notified = useRef(false)
+
+  useEffect(() => {
+    if (!notified.current) {
+      notified.current = true
+      setLoaded(true)
+    }
+  }, [setLoaded])
+
+  useFrame((_, delta) => {
+    ref.current.rotation.y += delta * 0.4
+  })
+
+  return <primitive ref={ref} object={scene} scale={1.2} position={[0, 0, 0]} />
+}
 
 function Background() {
   return (
-    <ShaderGradientCanvas
-      className="absolute top-0 left-0 w-full h-full pointer-events-none"
-      pixelDensity={1}
-      fov={45}
+    <Canvas
+      style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', pointerEvents: 'none' }}
+      camera={{ position: [0, 0, 5], fov: 45 }}
+      gl={{ alpha: true, antialias: true }}
     >
-      <ShaderGradient
-        animate="on"
-        axesHelper="off"
-        brightness={1.5}
-        cAzimuthAngle={250}
-        cDistance={1.5}
-        cPolarAngle={140}
-        cameraZoom={4.5}
-        color1="#809bd6"
-        color2="#910aff"
-        color3="#af38ff"
-        destination="onCanvas"
-        embedMode="off"
-        envPreset="city"
-        format="gif"
-        fov={45}
-        frameRate={10}
-        gizmoHelper="hide"
-        grain="on"
-        lightType="3d"
-        pixelDensity={1}
-        positionX={0}
-        positionY={0}
-        positionZ={0}
-        range="disabled"
-        rangeEnd={40}
-        rangeStart={0}
-        reflection={0.5}
-        rotationX={0}
-        rotationY={0}
-        rotationZ={140}
-        shader="defaults"
-        type="sphere"
-        uAmplitude={7}
-        uDensity={0.8}
-        uFrequency={5.5}
-        uSpeed={0.3}
-        uStrength={0.4}
-        uTime={0}
-        wireframe={false}
-      />
-    </ShaderGradientCanvas>
+      <ambientLight intensity={0.6} />
+      <directionalLight position={[5, 8, 5]} intensity={1.2} castShadow />
+      <directionalLight position={[-5, 2, -3]} intensity={0.4} color="#aabbff" />
+      <Suspense fallback={null}>
+        <Model />
+        <Environment preset="city" />
+        <ContactShadows position={[0, -1.5, 0]} opacity={0.4} scale={6} blur={2} far={4} />
+      </Suspense>
+    </Canvas>
   )
 }
+
+useGLTF.preload('/models/bonhomme.glb')
 
 export default Background

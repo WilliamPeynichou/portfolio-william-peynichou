@@ -77,7 +77,7 @@ export default WilliamPeynichou;`
   return (
     <section 
       ref={sectionRef}
-      className={`min-h-screen flex items-center justify-center py-24 px-4 transition-opacity duration-1000 ${
+      className={`min-h-screen flex items-center justify-center py-6 px-4 transition-opacity duration-1000 ${
         isVisible ? 'opacity-100' : 'opacity-0'
       }`}
     >
