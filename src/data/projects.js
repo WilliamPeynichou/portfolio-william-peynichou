@@ -7,6 +7,7 @@ import FiscaliaInterface from '@/assets/Fiscalia-interface.png'
 import FiscaliaResponse from '@/assets/Fiscalia-response.png'
 
 const projectOrder = [
+  'claake-code',
   'trouvetaboite',
   'fiscalia',
   'commis',
@@ -16,6 +17,21 @@ const projectOrder = [
 ]
 
 export const projects = [
+  {
+    id: 8,
+    slug: 'claake-code',
+    title: "Claake Code",
+    type: "Desktop IDE with AI Coding Agents",
+    year: "2026",
+    image: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=2670&auto=format&fit=crop",
+    description: {
+      fr: "Claake Code est un IDE desktop embarquant des agents IA de développement que l'utilisateur peut entièrement personnaliser. Le harness — outils, prompts et providers — est totalement remodelable, sans être imposé par un fournisseur.\n\nL'IDE propose trois modes opérationnels : Act (single-turn), Goal (boucle autonome) et Plan (exploration interactive question-réponse). Il intègre plus de 19 outils — shell, fichiers, recherche web, génération d'images, MCP — et supporte simultanément plusieurs providers IA (Anthropic, OpenAI, Google, Kimi, OpenRouter).\n\nParticularité : chaque description d'outil est éditable. L'utilisateur peut reformuler, restreindre ou modifier le contrat de chaque outil. Le projet inclut aussi un système de swarms d'agents avec coordination pair-à-pair et tableau de tâches partagé.",
+      en: "Claake Code is a desktop IDE featuring built-in AI coding agents that users can fully customize. The harness — tools, prompts, and providers — is entirely reshapeable rather than vendor-determined.\n\nThe IDE offers three operational modes: Act (single-turn), Goal (autonomous looping), and Plan (interactive question-answer exploration). It integrates 19+ tools — shell, files, web search, image generation, MCP — and supports multiple AI providers simultaneously (Anthropic, OpenAI, Google, Kimi, OpenRouter).\n\nKey feature: every tool description is editable. Users can rephrase, scope down, or change the contract of each tool. The project also includes an agent swarm system with peer-to-peer coordination and shared task boards."
+    },
+    technologies: ["Tauri 2", "React", "Rust", "TypeScript", "Monaco Editor", "xterm", "MCP Protocol"],
+    githubLink: "https://github.com/WilliamPeynichou/ClaakeCode",
+    gallery: []
+  },
   {
     id: 0,
     slug: 'trouvetaboite',
