@@ -15,6 +15,7 @@ const Commis = lazy(() => import('./component/pages/Commis'))
 const Fiscalia = lazy(() => import('./component/pages/Fiscalia'))
 const PortfolioProject = lazy(() => import('./component/pages/PortfolioProject'))
 const MarsIA = lazy(() => import('./component/pages/MarsIA'))
+const ClaakeCode = lazy(() => import('./component/pages/ClaakeCode'))
 const AiCodePipeline = lazy(() => import('./component/pages/AiCodePipeline'))
 const CommisAIWorkflow = lazy(() => import('./component/pages/CommisAIWorkflow'))
 const BotVeillePyWorkflow = lazy(() => import('./component/pages/BotVeillePyWorkflow'))
@@ -44,6 +45,7 @@ function App() {
           <Route path="/project/fiscalia" element={<Fiscalia />} />
           <Route path="/project/portfolio" element={<PortfolioProject />} />
           <Route path="/project/mars-ia" element={<MarsIA />} />
+          <Route path="/project/claake-code" element={<ClaakeCode />} />
           <Route path="/workflow/ai-code-pipeline" element={<AiCodePipeline />} />
           <Route path="/workflow/commis-ai" element={<CommisAIWorkflow />} />
             <Route path="/workflow/bot-veille-py" element={<BotVeillePyWorkflow />} />
