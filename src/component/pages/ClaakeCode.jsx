@@ -415,6 +415,143 @@ function ClaakeCode() {
                 ))}
               </div>
             </div>
+
+            <div className="mb-24">
+              <h3 className="text-sm font-mono text-gray-500 uppercase tracking-widest mb-2">
+                {language === 'fr' ? 'Ce que ce projet m\'a appris' : 'What this project taught me'}
+              </h3>
+              <p className="text-gray-600 font-mono text-xs mb-10">
+                {language === 'fr'
+                  ? 'Le projet compte moins que ce qu\'il prouve'
+                  : 'The project matters less than what it proves'}
+              </p>
+
+              <div className="space-y-10">
+                <div className="space-y-6">
+                  <p className="text-gray-200 leading-relaxed text-2xl font-light">
+                    {language === 'fr'
+                      ? "Claake Code, ma propre version d'un IDE de coding agents open source. Et ce que ça m'a appris compte plus que le projet lui-même."
+                      : "Claake Code, my own version of an open-source coding agent IDE. And what it taught me matters more than the project itself."}
+                  </p>
+                  <p className="text-gray-400 leading-relaxed text-lg font-light">
+                    {language === 'fr'
+                      ? "Claake Code est un fork retravaillé de Sinew : un IDE desktop avec des agents IA intégrés, où chaque outil est configurable et où c'est toi qui décides de ce que l'agent voit."
+                      : "Claake Code is a reworked fork of Sinew: a desktop IDE with built-in AI agents, where every tool is configurable and you decide what the agent sees."}
+                  </p>
+                </div>
+
+                <div className="rounded-2xl border border-white/10 bg-white/5 p-6 md:p-8">
+                  <p className="text-xs font-mono text-gray-500 uppercase tracking-widest mb-6">
+                    {language === 'fr' ? 'Ce que j\'ai construit et amélioré' : 'What I built and improved'}
+                  </p>
+                  <div className="space-y-4">
+                    <p className="text-gray-300 text-lg font-light leading-relaxed">
+                      {language === 'fr'
+                        ? "Une UI/UX complète pour le CRUD des Skills, des serveurs MCP et la gestion fine des Tools. Tu actives, tu désactives, tu réécris la description de chaque outil."
+                        : "A complete UI/UX for Skills CRUD, MCP servers, and fine-grained Tool management. You enable, disable, rewrite the description of each tool."}
+                    </p>
+                    <p className="text-gray-400 text-base font-light leading-relaxed italic">
+                      {language === 'fr'
+                        ? "L'agent n'a accès qu'à la surface que tu lui laisses."
+                        : "The agent only has access to the surface you allow it."}
+                    </p>
+                  </div>
+                </div>
+
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div className="rounded-2xl border border-white/10 bg-white/5 p-6 md:p-8">
+                    <p className="text-sm font-semibold text-white mb-3">
+                      {language === 'fr' ? 'Connexions bases de données' : 'Database connections'}
+                    </p>
+                    <p className="text-sm text-gray-400 font-light leading-relaxed">
+                      {language === 'fr'
+                        ? "Gestion des connexions à des bases de données directement dans l'app."
+                        : "Database connection management directly inside the app."}
+                    </p>
+                  </div>
+                  <div className="rounded-2xl border border-white/10 bg-white/5 p-6 md:p-8">
+                    <p className="text-sm font-semibold text-white mb-3">
+                      {language === 'fr' ? 'Mode jour / nuit' : 'Light / dark mode'}
+                    </p>
+                    <p className="text-sm text-gray-400 font-light leading-relaxed">
+                      {language === 'fr'
+                        ? "Un vrai mode jour/nuit, parce que l'outil doit s'adapter à toi, pas l'inverse."
+                        : "A real light/dark mode, because the tool should adapt to you, not the other way around."}
+                    </p>
+                  </div>
+                </div>
+
+                <div className="border-l-2 border-white/20 pl-6 md:pl-10 space-y-6">
+                  <p className="text-gray-200 leading-relaxed text-xl font-light">
+                    {language === 'fr'
+                      ? "Mais honnêtement, le projet n'est pas le sujet."
+                      : "But honestly, the project isn't the point."}
+                  </p>
+                  <p className="text-white leading-relaxed text-2xl font-semibold">
+                    {language === 'fr'
+                      ? "Le sujet, c'est ce qu'il prouve."
+                      : "The point is what it proves."}
+                  </p>
+                  <p className="text-gray-400 leading-relaxed text-lg font-light">
+                    {language === 'fr'
+                      ? "On vit un moment où tout devient possible si on est prêt à apprendre. Forker un projet, le comprendre en profondeur, le modifier, le faire sien : c'est ça la puissance de l'open source à l'ère de l'IA. Personne ne te demande la permission. Tu apprends, tu construis."
+                      : "We live in a moment where everything becomes possible if you're willing to learn. Forking a project, understanding it deeply, modifying it, making it yours: that's the power of open source in the AI era. Nobody asks you for permission. You learn, you build."}
+                  </p>
+                </div>
+
+                <div className="rounded-2xl border border-white/10 bg-white/5 p-6 md:p-10 space-y-6">
+                  <p className="text-white leading-relaxed text-xl font-semibold">
+                    {language === 'fr'
+                      ? "L'IA est devenue une vraie compétence."
+                      : "AI has become a real skill."}
+                  </p>
+                  <p className="text-gray-400 leading-relaxed text-lg font-light">
+                    {language === 'fr'
+                      ? "Pas \"savoir prompter\". Comprendre comment ça marche. Les Skills. Les Tools. Les MCP. Le RAG. L'embedding. Quand tu sais réellement comment ces briques s'assemblent, tu arrêtes de subir l'outil et tu commences à créer de la valeur avec."
+                      : "Not \"knowing how to prompt.\" Understanding how it works. Skills. Tools. MCP. RAG. Embeddings. When you truly know how these building blocks fit together, you stop being at the mercy of the tool and start creating value with it."}
+                  </p>
+                </div>
+
+                <div className="space-y-6">
+                  <p className="text-gray-300 leading-relaxed text-lg font-light">
+                    {language === 'fr'
+                      ? "Pour rester à niveau, la veille est indispensable. Le domaine bouge chaque semaine, et ne pas suivre, c'est se déconnecter vite."
+                      : "To stay sharp, keeping up is essential. The field moves every week, and not following means disconnecting fast."}
+                  </p>
+                  <p className="text-gray-400 leading-relaxed text-lg font-light">
+                    {language === 'fr'
+                      ? "Mais il faut être lucide sur le revers. Cette veille permanente crée un vrai piège : le FOMO, la peur de passer à côté. Quand un nouvel outil, un nouveau modèle, une nouvelle technique sortent tous les jours, on finit par croire qu'on est toujours en retard."
+                      : "But we need to be honest about the flip side. This constant monitoring creates a real trap: FOMO, the fear of missing out. When a new tool, a new model, a new technique drops every day, you end up believing you're always behind."}
+                  </p>
+                  <p className="text-gray-400 leading-relaxed text-lg font-light">
+                    {language === 'fr'
+                      ? "On saute d'une techno à l'autre sans rien approfondir. On confond agitation et progrès. Le danger est réel, et il est humain. Charge mentale, sentiment d'incompétence permanent, fatigue, incapacité à se concentrer sur une seule chose assez longtemps pour vraiment la maîtriser. Le FOMO pousse à consommer de l'information au lieu de construire des compétences. Et paradoxalement, c'est en voulant tout suivre qu'on finit par ne rien maîtriser."
+                      : "You jump from one tech to the next without deepening anything. You confuse motion with progress. The danger is real, and it's human. Mental load, permanent feeling of incompetence, fatigue, inability to focus on one thing long enough to truly master it. FOMO pushes you to consume information instead of building skills. And paradoxically, by trying to follow everything, you end up mastering nothing."}
+                  </p>
+                </div>
+
+                <div className="border-l-2 border-white/20 pl-6 md:pl-10 space-y-6">
+                  <p className="text-gray-300 leading-relaxed text-lg font-light">
+                    {language === 'fr'
+                      ? "La veille est un outil, pas une course. Suivre les fondamentaux qui durent vaut mieux que courir après chaque nouveauté."
+                      : "Monitoring is a tool, not a race. Following lasting fundamentals is better than chasing every new thing."}
+                  </p>
+                  <p className="text-gray-400 leading-relaxed text-lg font-light">
+                    {language === 'fr'
+                      ? "Et il y a un enjeu de sécurité derrière. Comprendre comment ton IA fonctionne, c'est savoir ce qu'elle voit, ce qu'elle peut faire, où sont les risques. C'est la différence entre travailler avec une boîte noire et travailler de manière maîtrisée."
+                      : "And there's a security concern behind it. Understanding how your AI works means knowing what it sees, what it can do, where the risks lie. It's the difference between working with a black box and working with full control."}
+                  </p>
+                </div>
+
+                <div className="rounded-2xl border border-white/20 bg-white/5 p-6 md:p-10">
+                  <p className="text-white leading-relaxed text-xl md:text-2xl font-semibold">
+                    {language === 'fr'
+                      ? "Ma conviction : la technique n'est plus la nécessité absolue. C'est la connaissance qui doit devenir la priorité. Les outils changent tous les six mois. Comprendre les fondamentaux, ça reste."
+                      : "My belief: technical skill is no longer the absolute necessity. Knowledge must become the priority. Tools change every six months. Understanding the fundamentals stays."}
+                  </p>
+                </div>
+              </div>
+            </div>
           </div>
           <Footer />
         </div>
