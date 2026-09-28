@@ -36,8 +36,8 @@ export default function PageMetadata() {
     const description = project?.description?.[language]?.split('\n')[0]
       || section?.[language]?.[1]
       || (workflow ? `${workflow.title} — ${workflow.type}.` : language === 'fr'
-        ? 'Projets IA, applications web et simulations Python par William Peynichou.'
-        : 'AI projects, web apps and Python simulations by William Peynichou.')
+        ? 'William Peynichou, Data Scientist en apprentissage à la Caisse d’Épargne CEAPC passionné de développement et d’IA. At Ifit : data science appliquée au sport.'
+        : 'William Peynichou, a Data Scientist apprentice at Caisse d’Épargne CEAPC passionate about development and AI. At Ifit: sports data science.')
     const url = `${ORIGIN}${pathname === '/' ? '/' : pathname}`
     const fullTitle = `${title} — William Peynichou`
 

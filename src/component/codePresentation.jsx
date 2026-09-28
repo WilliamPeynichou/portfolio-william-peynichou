@@ -36,7 +36,7 @@ const WilliamPeynichou = () => {
   const profile = {
     name: 'William Peynichou',
     age: 27,
-    role: 'Junior Full Stack Developer',
+    role: 'Data Scientist apprentice at Caisse d’Épargne CEAPC',
     location: 'Bordeaux, France',
     skills: [
       'React', 'Node.js', 'Express', 'Tailwind CSS', 'Three.js', 'Animate UI',
@@ -44,7 +44,7 @@ const WilliamPeynichou = () => {
       'HTML', 'CSS', 'WebSocket',
     ],
     projects: [
-      'Portfolio', 'Website', 'Application', 'Automatisation Code/No Code', 'Bot'
+      'At Ifit — sports data science', 'Claake Code — AI development'
     ],
     tools: [
       'Cursor', 'Figma', 'Illustrator', 'Lightroom',
@@ -64,7 +64,7 @@ const WilliamPeynichou = () => {
         <article>
           <h3>L'Atelier</h3>
           <span>16 months</span>
-          <p>Junior Full Stack Developer</p>
+          <p>Data Scientist apprentice at Caisse d’Épargne CEAPC · passionate about development and AI</p>
         </article>
       </section>
     </div>

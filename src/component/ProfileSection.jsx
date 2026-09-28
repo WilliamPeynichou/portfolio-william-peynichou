@@ -11,19 +11,19 @@ function ProfileSection() {
   const content = {
     fr: {
       title: "Profil",
-      role: "Développeur Full Stack",
+      role: "Data Scientist en apprentissage à la Caisse d’Épargne CEAPC",
       downloadCV: "Télécharger mon CV",
       viewCV: "Voir le CV",
       about: "À propos",
-      description: "Passionné par le développement web et les nouvelles technologies, je crée des expériences numériques uniques et performantes."
+      description: "Data Scientist en apprentissage à la Caisse d’Épargne CEAPC, je suis passionné par le développement et l’intelligence artificielle. Formé au développement à La Plateforme, je poursuis un master Big Data et IA à Sup de Vinci. At Ifit est mon projet de data science appliquée au sport."
     },
     en: {
       title: "Profile",
-      role: "Full Stack Developer",
+      role: "Data Scientist apprentice at Caisse d’Épargne CEAPC",
       downloadCV: "Download CV",
       viewCV: "View CV",
       about: "About",
-      description: "Passionate about web development and new technologies, I create unique and high-performance digital experiences."
+      description: "I’m a Data Scientist apprentice at Caisse d’Épargne CEAPC, passionate about software development and AI. I trained in software development at La Plateforme and am pursuing a master’s in Big Data and AI at Sup de Vinci. At Ifit is my sports data science project."
     }
   }
 

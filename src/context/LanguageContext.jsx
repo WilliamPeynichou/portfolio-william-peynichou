@@ -12,7 +12,7 @@ const translations = {
     },
     about: {
       title: 'About',
-      content: 'Full Stack Developer passionate about creating modern and performant web applications.'
+      content: 'Data Scientist apprentice at Caisse d’Épargne CEAPC, passionate about software development and AI.'
     },
     projects: {
       title: 'My Projects',
@@ -32,7 +32,7 @@ const translations = {
       copyright: 'All rights reserved.'
     },
     codePresentation: {
-      role: 'Full Stack Developer',
+      role: 'Data Scientist apprentice at Caisse d’Épargne CEAPC',
       experience: 'Experience',
       months: 'months',
       developer: 'Full stack developer'
@@ -48,7 +48,7 @@ const translations = {
     },
     about: {
       title: 'À propos',
-      content: 'Développeur Full Stack passionné par la création d\'applications web modernes et performantes.'
+      content: 'Data Scientist en apprentissage à la Caisse d’Épargne CEAPC, passionné de développement et d’intelligence artificielle.'
     },
     projects: {
       title: 'Mes Projets',
@@ -68,7 +68,7 @@ const translations = {
       copyright: 'Tous droits réservés.'
     },
     codePresentation: {
-      role: 'Développeur Full Stack',
+      role: 'Data Scientist en apprentissage à la Caisse d’Épargne CEAPC',
       experience: 'Expérience',
       months: 'mois',
       developer: 'Développeur full stack'

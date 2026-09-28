@@ -54,8 +54,8 @@ export function ProjectsPresentation() {
         </h2>
         <p className="text-2xl md:text-3xl max-w-2xl font-light leading-relaxed text-gray-300">
           {language === 'fr'
-            ? "Une sélection de projets récents alliant design, performance et expérience utilisateur."
-            : "A selection of recent projects combining design, performance, and user experience."}
+            ? "Data Scientist en apprentissage à la Caisse d’Épargne CEAPC et passionné de développement et d’IA, je conçois des projets à la croisée de la donnée, du sport et du logiciel."
+            : "A Data Scientist apprentice at Caisse d’Épargne CEAPC passionate about development and AI, building projects at the intersection of data, sport and software."}
         </p>
       </div>
 

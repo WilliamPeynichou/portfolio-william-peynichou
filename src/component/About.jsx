@@ -4,8 +4,8 @@ function About() {
   const { language } = useLanguage()
 
   const content = {
-    en: "A developer based in Bordeaux with an infinite love for clean code, specialized in Full Stack Development and Modern Web Applications.",
-    fr: "Un développeur basé à Bordeaux avec un amour infini pour le code propre, spécialisé en Développement Full Stack et Applications Web Modernes."
+    en: "I’m a Data Scientist apprentice at Caisse d’Épargne CEAPC, passionate about software development and AI. At Ifit brings these interests together through sports data.",
+    fr: "Data Scientist en apprentissage à la Caisse d’Épargne CEAPC, je suis passionné de développement et d’IA. At Ifit réunit ces centres d’intérêt autour des données sportives."
   }
 
   return (

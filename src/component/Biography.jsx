@@ -5,16 +5,16 @@ function Biography() {
 
   const content = {
     en: {
-      title: "I'm William Peynichou, French developer based in Marseille, specialized in Full Stack Development and Modern Web Applications.",
-      p1: "After spending 16 months at La Plateforme as a Full Stack Developer, I decided to continue my journey creating innovative and performant solutions.",
-      p2: "Now I'm working on exciting new projects.",
+      title: "I'm William Peynichou, a Data Scientist apprentice at Caisse d’Épargne CEAPC passionate about software development and AI.",
+      p1: "I trained in software development at La Plateforme and am pursuing a master’s in Big Data and AI at Sup de Vinci. These foundations guide my work at the intersection of data, development and AI.",
+      p2: "From At Ifit, my sports data science project, to RoadNetwork, a machine learning project based on reinforcement learning, I turn these interests into concrete applications.",
       clientsTitle: "Technologies",
       servicesTitle: "Services"
     },
     fr: {
-      title: "Je suis William Peynichou, développeur français basé à Marseille, spécialisé en Développement Full Stack et Applications Web Modernes.",
-      p1: "Après avoir passé 16 mois à La Plateforme en tant que Développeur Full Stack, j'ai décidé de continuer mon parcours en créant des solutions innovantes et performantes.",
-      p2: "Maintenant je travaille sur de nouveaux projets passionnants.",
+      title: "Je suis William Peynichou, Data Scientist en apprentissage à la Caisse d’Épargne CEAPC, passionné de développement et d’intelligence artificielle.",
+      p1: "Formé au développement à La Plateforme, je poursuis un master Big Data et IA à Sup de Vinci. Ce parcours nourrit mon travail à la croisée de la donnée, du développement et de l’intelligence artificielle.",
+      p2: "D’At Ifit, mon projet de data science dans le sport, à RoadNetwork, un projet de machine learning par apprentissage par renforcement, je concrétise ces centres d’intérêt.",
       clientsTitle: "Technologies",
       servicesTitle: "Services"
     }

@@ -107,7 +107,7 @@ function RoadNetwork() {
         <TitleOpener
           title="ROADNETWORK"
           titleOpacity={titleOpacity}
-          subtitle={fr ? 'Réseau routier procédural & véhicules qui apprennent' : 'Procedural road network & learning vehicles'}
+          subtitle={fr ? 'Machine learning · Q-learning appliqué à la circulation' : 'Machine learning · Q-learning for traffic'}
         />
         {scrollProgress < 0.5 && (
           <div className="absolute bottom-10 left-1/2 -translate-x-1/2 z-20 animate-bounce">
