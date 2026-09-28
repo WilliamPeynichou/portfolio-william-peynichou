@@ -1,18 +1,18 @@
-import { useState, useEffect, useRef } from 'react'
+import { useState, useEffect, useRef, useCallback } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { ExternalLink } from 'lucide-react'
-import { useLanguage } from '@/context/LanguageContext'
+import { useLanguage } from '@/context/useLanguage'
 import { projects } from '@/data/projects'
 import Footer from '@/component/layout/footer'
 import Header from '@/component/layout/header'
-import AtIfitIntroVideo from '@/assets/At-iFitIntro.mov'
+import AtIfitIntroVideo from '@/assets/At-iFitIntro.mp4'
 
 function TitleOpener({ title, titleOpacity, subtitle }) {
   const [displayText, setDisplayText] = useState(title)
   const chars = 'ABCDEFGYIJKLNOPQRSTUVWXYZ'
   const intervalRef = useRef(null)
 
-  const scramble = () => {
+  const scramble = useCallback(() => {
     let iteration = 0
     clearInterval(intervalRef.current)
     intervalRef.current = setInterval(() => {
@@ -23,12 +23,12 @@ function TitleOpener({ title, titleOpacity, subtitle }) {
       if (iteration >= title.length) clearInterval(intervalRef.current)
       iteration += 1 / 3
     }, 30)
-  }
+  }, [title])
 
   useEffect(() => {
     scramble()
     return () => clearInterval(intervalRef.current)
-  }, [title])
+  }, [scramble])
 
   return (
     <div className="absolute inset-0 flex flex-col items-center justify-center z-10" style={{ opacity: titleOpacity }}>
@@ -53,7 +53,7 @@ function VideoOpener({ scrollProgress, titleOpacity }) {
         className="hidden md:block absolute inset-0 w-full h-full object-cover"
         style={{ transform: `scale(${1 + scrollProgress * 0.3})`, transition: 'transform 0.1s ease-out' }}
       >
-        <source src={AtIfitIntroVideo} type="video/quicktime" />
+        <source src={AtIfitIntroVideo} type="video/mp4" />
       </video>
       <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-transparent to-black/80" />
       <TitleOpener
@@ -117,16 +117,30 @@ function ProjetAtIfit() {
 
   const deploySteps = language === 'fr'
     ? [
-        { step: '01', label: 'Code versionné sur GitHub', sub: 'Monorepo avec branches main / dev' },
-        { step: '02', label: 'Frontend déployé sur Vercel', sub: 'CI/CD automatique sur push main — CDN global' },
-        { step: '03', label: 'Backend déployé sur Railway', sub: 'Container Node/Express + MySQL persistant' },
+        { step: '01', label: 'Code versionné sur GitHub', sub: 'Monorepo client / server, tests Jest sur le coach IA' },
+        { step: '02', label: 'Frontend & backend sur Railway', sub: 'Build Vite + container Node/Express, URLs publiques HTTPS' },
+        { step: '03', label: 'MySQL persistant', sub: 'Sequelize, filtres temporels SQL, synchronisation Strava complète' },
         { step: '04', label: 'OAuth Strava en production', sub: 'Callback HTTPS Railway — tokens sécurisés' },
       ]
     : [
-        { step: '01', label: 'Code versioned on GitHub', sub: 'Monorepo with main / dev branches' },
-        { step: '02', label: 'Frontend deployed on Vercel', sub: 'Auto CI/CD on main push — global CDN' },
-        { step: '03', label: 'Backend deployed on Railway', sub: 'Node/Express container + persistent MySQL' },
+        { step: '01', label: 'Code versioned on GitHub', sub: 'Client / server monorepo, Jest tests on the AI coach' },
+        { step: '02', label: 'Frontend & backend on Railway', sub: 'Vite build + Node/Express container, public HTTPS URLs' },
+        { step: '03', label: 'Persistent MySQL', sub: 'Sequelize, SQL time filters, full Strava sync' },
         { step: '04', label: 'Strava OAuth in production', sub: 'HTTPS Railway callback — secured tokens' },
+      ]
+
+  const newFeatures = language === 'fr'
+    ? [
+        { title: 'Dashboards par sport', desc: 'Vélo, course et natation, sélecteur temporel global et 4 modales d’analyse plein écran.' },
+        { title: 'Nutrition & course', desc: 'Carte nutrition d’effort, préparation de course, plan de ravitaillement triathlon, comparateur d’aliments.' },
+        { title: 'Coach IA agentique', desc: 'Contexte unifié, outils d’analyse des données, provider Anthropic ou Mistral, assistant mobile.' },
+        { title: 'Conformité & UX', desc: 'Consentement, pages légales, export / suppression RGPD, mode sombre, onboarding Strava optionnel.' },
+      ]
+    : [
+        { title: 'Per-sport dashboards', desc: 'Cycling, running and swimming, global time selector and 4 full-screen analysis modals.' },
+        { title: 'Nutrition & racing', desc: 'Effort nutrition card, race preparation, triathlon fueling plan, food comparisons.' },
+        { title: 'Agentic AI coach', desc: 'Unified context, data-analysis tools, Anthropic or Mistral provider, mobile assistant.' },
+        { title: 'Compliance & UX', desc: 'Consent, legal pages, GDPR export / delete, dark mode, optional Strava onboarding.' },
       ]
 
   return (
@@ -239,6 +253,22 @@ function ProjetAtIfit() {
               </div>
             </div>
 
+            {/* ── NOUVEAUTÉS ── */}
+            <div className="mb-24">
+              <h3 className="text-sm font-mono text-gray-500 uppercase tracking-widest mb-8">
+                {language === 'fr' ? 'Dernières évolutions' : 'Latest updates'}
+              </h3>
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                {newFeatures.map((f, i) => (
+                  <div key={f.title} className="flex flex-col gap-3 p-6 rounded-2xl border border-white/10 bg-white/5">
+                    <span className="text-xs font-mono text-gray-600">{String(i + 1).padStart(2, '0')}</span>
+                    <p className="text-sm font-semibold text-white">{f.title}</p>
+                    <p className="text-xs text-gray-500 font-mono leading-relaxed">{f.desc}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+
             {/* ── DÉPLOIEMENT ── */}
             <div className="mb-24">
               <h3 className="text-sm font-mono text-gray-500 uppercase tracking-widest mb-8">
@@ -292,31 +322,34 @@ function ProjetAtIfit() {
               </div>
             </div>
 
-            {/* N8N Architecture */}
-            {project.n8nImage && (
-              <div className="mb-24">
-                <h3 className="text-sm font-mono text-gray-500 uppercase tracking-widest mb-8">
-                  {language === 'fr' ? 'Architecture IA & Automation' : 'AI & Automation Architecture'}
-                </h3>
-                <div className="w-full md:w-2/3 mx-auto rounded-xl overflow-hidden bg-gray-900 border border-white/10 p-4">
-                  <img
-                    src={project.n8nImage}
-                    alt="n8n workflow"
-                    className="w-full h-auto object-contain"
-                  />
-                  <p className="text-sm text-gray-500 mt-4 text-center font-mono">
-                    {language === 'fr' ? 'Workflow n8n avec Gemini et outils personnalisés' : 'n8n Workflow powered by Gemini and custom tools'}
-                  </p>
-                </div>
-                <div className="mt-10 max-w-4xl mx-auto">
-                  <p className="text-gray-300 leading-relaxed text-lg font-light text-justify">
-                    {language === 'fr'
-                      ? "Au cœur du système, un agent autonome orchestré par n8n agit comme un véritable coach sportif intelligent. Connecté directement au modèle de langage Gemini, cet agent interroge en temps réel la base de données pour contextualiser chaque réponse selon le profil précis de l'utilisateur (poids actuel, objectif cible, historique). En croisant ces données avec les performances importées via l'API Strava, l'IA génère des plans d'entraînement dynamiques, réalistes et spécifiquement adaptés à la progression physique de chacun."
-                      : "At the core of the system, an autonomous agent orchestrated by n8n acts as a truly intelligent sports coach. Directly connected to the Gemini language model, this agent queries the database in real-time to contextualize every answer based on the user's specific profile (current weight, target goal, history). By cross-referencing this data with performance metrics imported via the Strava API, the AI generates dynamic, realistic training plans specifically adapted to each individual's physical progress."}
-                  </p>
-                </div>
+            {/* AI coach architecture */}
+            <div className="mb-24">
+              <h3 className="text-sm font-mono text-gray-500 uppercase tracking-widest mb-8">
+                {language === 'fr' ? 'Architecture IA — coach agentique' : 'AI architecture — agentic coach'}
+              </h3>
+              <div className="max-w-4xl">
+                <p className="text-gray-300 leading-relaxed text-lg font-light mb-10">
+                  {language === 'fr'
+                    ? "Le coach IA est désormais un agent intégré directement au backend Express. Plutôt que de tout injecter dans le prompt, il dispose d'outils pour interroger lui-même les données de l'utilisateur (profil, poids, activités Strava, nutrition) et construit un contexte unifié avant de répondre. Le provider est configurable : Anthropic (Claude) ou Mistral, avec compatibilité Ollama en local. Une skill d'analyse sportive avancée encadre ses recommandations d'entraînement."
+                    : "The AI coach is now an agent built directly into the Express backend. Instead of stuffing everything into the prompt, it has tools to query the user's data itself (profile, weight, Strava activities, nutrition) and builds a unified context before answering. The provider is configurable: Anthropic (Claude) or Mistral, with local Ollama compatibility. An advanced sports-analysis skill frames its training recommendations."}
+                </p>
               </div>
-            )}
+              {project.n8nImage && (
+                <details className="rounded-2xl border border-white/10 bg-white/5 p-6">
+                  <summary className="cursor-pointer text-sm font-mono text-gray-400">
+                    {language === 'fr' ? 'V1 — agent n8n + Gemini (historique)' : 'V1 — n8n + Gemini agent (history)'}
+                  </summary>
+                  <div className="mt-6 w-full md:w-2/3 mx-auto rounded-xl overflow-hidden bg-gray-900 border border-white/10 p-4">
+                    <img src={project.n8nImage} alt="n8n workflow" loading="lazy" className="w-full h-auto object-contain" />
+                  </div>
+                  <p className="text-sm text-gray-500 mt-4 text-center font-mono">
+                    {language === 'fr'
+                      ? 'La première version orchestrait le coach via un workflow n8n connecté à Gemini, avant la migration vers un agent natif.'
+                      : 'The first version orchestrated the coach through an n8n workflow connected to Gemini, before moving to a native agent.'}
+                  </p>
+                </details>
+              )}
+            </div>
 
           </div>
           <Footer />

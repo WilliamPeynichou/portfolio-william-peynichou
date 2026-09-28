@@ -1,8 +1,7 @@
-import { createContext, useContext, useState } from 'react'
+import { useState } from 'react'
+import { LanguageContext } from './language-context'
 
-const LanguageContext = createContext()
-
-export const translations = {
+const translations = {
   en: {
     header: {
       contact: 'Contact',
@@ -98,13 +97,5 @@ export function LanguageProvider({ children }) {
       {children}
     </LanguageContext.Provider>
   )
-}
-
-export function useLanguage() {
-  const context = useContext(LanguageContext)
-  if (!context) {
-    throw new Error('useLanguage must be used within a LanguageProvider')
-  }
-  return context
 }
 

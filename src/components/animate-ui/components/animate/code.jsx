@@ -5,7 +5,7 @@ import 'prismjs/components/prism-jsx'
 import 'prismjs/components/prism-typescript'
 import 'prismjs/components/prism-tsx'
 
-export function Code({ children, className, code }) {
+export function Code({ children, className }) {
   return (
     <div className={`bg-[#1e1e1e] rounded-lg overflow-hidden shadow-2xl border border-gray-800 ${className || ''}`}>
       {children}

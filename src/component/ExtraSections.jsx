@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import { useLanguage } from '@/context/LanguageContext'
+import { useLanguage } from '@/context/useLanguage'
 
 // Import des images pour la prévisualisation
 import { BiarritzPlage, Camel, Lewis, SurfBlur } from '@/assets/galery'

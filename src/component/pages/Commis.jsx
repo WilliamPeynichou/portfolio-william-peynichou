@@ -1,7 +1,7 @@
-import { useState, useEffect, useRef } from 'react'
+import { useState, useEffect, useRef, useCallback } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { ExternalLink } from 'lucide-react'
-import { useLanguage } from '@/context/LanguageContext'
+import { useLanguage } from '@/context/useLanguage'
 import { projects } from '@/data/projects'
 import Footer from '@/component/layout/footer'
 import Header from '@/component/layout/header'
@@ -11,7 +11,7 @@ function TitleOpener({ title, titleOpacity, subtitle }) {
   const chars = 'ABCDEFGYIJKLNOPQRSTUVWXYZ'
   const intervalRef = useRef(null)
 
-  const scramble = () => {
+  const scramble = useCallback(() => {
     let iteration = 0
     clearInterval(intervalRef.current)
     intervalRef.current = setInterval(() => {
@@ -23,12 +23,12 @@ function TitleOpener({ title, titleOpacity, subtitle }) {
       if (iteration >= title.length) clearInterval(intervalRef.current)
       iteration += 1 / 3
     }, 30)
-  }
+  }, [title])
 
   useEffect(() => {
     scramble()
     return () => clearInterval(intervalRef.current)
-  }, [title])
+  }, [scramble])
 
   return (
     <div className="absolute inset-0 flex flex-col items-center justify-center z-10" style={{ opacity: titleOpacity }}>

@@ -1,6 +1,6 @@
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useRef, useState, useCallback } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
-import { useLanguage } from '@/context/LanguageContext'
+import { useLanguage } from '@/context/useLanguage'
 import { projects } from '@/data/projects'
 import ReactIcon from '@/components/icons/react-icon'
 import Footer from '@/component/layout/footer'
@@ -9,7 +9,7 @@ import { animate, stagger } from 'animejs'
 import { ChevronLeft, ChevronRight } from 'lucide-react'
 
 // Composant de Carrousel pour les outils (Iframe)
-function ToolsCarousel({ language }) {
+function ToolsCarousel() {
   const [currentIndex, setCurrentIndex] = useState(0)
   const tools = [
     {
@@ -88,12 +88,12 @@ function ToolsCarousel({ language }) {
   )
 }
 
-function TitleOpener({ title, titleOpacity, subtitle, language }) {
+function TitleOpener({ title, titleOpacity, subtitle }) {
   const [displayText, setDisplayText] = useState(title)
   const chars = 'ABCDEFGYIJKLNOPQRSTUVWXYZ'
   const intervalRef = useRef(null)
 
-  const scramble = () => {
+  const scramble = useCallback(() => {
     let iteration = 0
     clearInterval(intervalRef.current)
     
@@ -114,12 +114,12 @@ function TitleOpener({ title, titleOpacity, subtitle, language }) {
       
       iteration += 1 / 3
     }, 30)
-  }
+  }, [title])
 
   useEffect(() => {
     scramble()
     return () => clearInterval(intervalRef.current)
-  }, [title])
+  }, [scramble])
 
   return (
     <div 
@@ -344,7 +344,7 @@ function PortfolioProject() {
             <h3 className="text-sm font-mono text-gray-500 uppercase tracking-[0.3em]">
               {language === 'fr' ? 'Outils et Technologies Interactifs' : 'Tools & Interactive Technologies'}
             </h3>
-            <ToolsCarousel language={language} />
+            <ToolsCarousel />
           </div>
 
           {/* Section: Implementation */}

@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
-import { useLanguage } from '@/context/LanguageContext'
+import { useLanguage } from '@/context/useLanguage'
 
 function Header() {
   const { language, toggleLanguage, t } = useLanguage()

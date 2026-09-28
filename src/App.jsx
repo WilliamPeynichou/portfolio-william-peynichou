@@ -4,6 +4,7 @@ import Home from './component/home'
 import { LanguageProvider } from './context/LanguageContext'
 import { LoadingProvider } from './context/LoadingContext'
 import LoadingScreen from './component/LoadingScreen'
+import PageMetadata from './component/PageMetadata'
 
 // Lazy load toutes les pages secondaires (pas la homepage)
 const Contact = lazy(() => import('./component/pages/Contact'))
@@ -13,6 +14,8 @@ const TrouveTaBoite = lazy(() => import('./component/pages/TrouveTaBoite'))
 const ProjetAtIfit = lazy(() => import('./component/pages/ProjetAt-Ifit'))
 const Commis = lazy(() => import('./component/pages/Commis'))
 const Fiscalia = lazy(() => import('./component/pages/Fiscalia'))
+const ClaakeCode = lazy(() => import('./component/pages/ClaakeCode'))
+const RoadNetwork = lazy(() => import('./component/pages/RoadNetwork'))
 const PortfolioProject = lazy(() => import('./component/pages/PortfolioProject'))
 const MarsIA = lazy(() => import('./component/pages/MarsIA'))
 const AiCodePipeline = lazy(() => import('./component/pages/AiCodePipeline'))
@@ -32,12 +35,15 @@ function App() {
     <LoadingProvider>
       <LoadingScreen />
       <LanguageProvider>
+        <PageMetadata />
         <Suspense fallback={<PageLoader />}>
           <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/photography" element={<Photography />} />
           <Route path="/archives" element={<Archives />} />
+          <Route path="/project/claake-code" element={<ClaakeCode />} />
+          <Route path="/project/road-network" element={<RoadNetwork />} />
           <Route path="/project/trouvetaboite" element={<TrouveTaBoite />} />
           <Route path="/project/at-ifit" element={<ProjetAtIfit />} />
           <Route path="/project/commis" element={<Commis />} />

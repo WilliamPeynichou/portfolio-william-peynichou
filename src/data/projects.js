@@ -5,30 +5,70 @@ import GraphiqueWeightAtIfit from '@/assets/GraphiqueWeightAt-Ifit.webp'
 import N8nAtIfit from '@/assets/8nAt-Ifit.webp'
 import FiscaliaInterface from '@/assets/Fiscalia-interface.png'
 import FiscaliaResponse from '@/assets/Fiscalia-response.png'
+import ClaakeCodePoster from '@/assets/ClaakeCodePoster.webp'
+import ClaakeCodePreview from '@/assets/ClaakeCodePreview.webp'
+import RoadNetworkReseau from '@/assets/RoadNetwork-reseau.webp'
+import RoadNetworkApprentissage from '@/assets/RoadNetwork-apprentissage.webp'
+import RoadNetworkComparaison from '@/assets/RoadNetwork-comparaison.webp'
 
 const projectOrder = [
+  'claake-code',
   'trouvetaboite',
   'fiscalia',
   'commis',
   'mars-ia',
   'portfolio',
   'at-ifit',
+  'road-network',
 ]
 
 export const projects = [
   {
+    id: 8,
+    slug: 'claake-code',
+    title: "Claake Code",
+    type: "Open-source desktop AI coding IDE",
+    year: "2026",
+    image: ClaakeCodePoster,
+    version: "v0.1.64",
+    description: {
+      fr: "Claake Code est un IDE desktop open source (MIT) pour coder avec des agents IA — en gardant la main sur tout le harness de l'agent. Chaque outil peut être activé, désactivé ou réécrit, chaque provider est branchable, et l'agent ne voit que la surface que tu lui laisses.\n\nLe projet est parti d'un fork de Sinew, puis a été entièrement rebrandé et étendu : 4 modes (Act, Ask en lecture seule, Goal, Plan) avec un modèle et un prompt éditable par mode, sous-agents et swarms d'agents avec tableau de tâches partagé, serveurs MCP, skills en Markdown, sources de bases de données sécurisées (lecture seule, limite de lignes, confirmation des opérations destructives), rollback par checkpoints, compaction et nettoyage de contexte, et un vrai éditeur Monaco + terminal xterm.\n\nMulti-provider sur la même boucle d'agent : Anthropic, OpenAI, Google, Kimi, Mistral, xAI et OpenRouter — par clé API ou via OAuth pour réutiliser un abonnement existant. Aucune télémétrie. Distribué pour macOS, Windows et Linux avec auto-updater, et accompagné de ClaakeCodeWeb, le site vitrine (landing FR/EN, SEO/GEO, pages légales).",
+      en: "Claake Code is an open-source (MIT) desktop IDE for coding with AI agents — while keeping full control over the agent harness. Every tool can be toggled or rewritten, every provider is pluggable, and the agent only sees the surface area you keep.\n\nThe project started as a fork of Sinew and was fully rebranded and extended: 4 modes (Act, read-only Ask, Goal, Plan) each with its own model and editable prompt, sub-agents and agent swarms with a shared task board, MCP servers, Markdown skills, safeguarded database sources (read-only mode, row limits, destructive-operation confirmation), checkpoint rollback, compaction and context cleaning, and a real Monaco editor + xterm terminal.\n\nMulti-provider on the same agent loop: Anthropic, OpenAI, Google, Kimi, Mistral, xAI and OpenRouter — through API keys or OAuth to reuse an existing subscription. No telemetry. Shipped for macOS, Windows and Linux with an auto-updater, alongside ClaakeCodeWeb, the product website (FR/EN landing, SEO/GEO, legal pages)."
+    },
+    technologies: ["Tauri 2", "Rust", "React", "TypeScript", "Monaco", "xterm.js", "MCP", "GitHub Actions", "Vercel"],
+    liveLink: "https://claakecode-web.vercel.app/",
+    githubLink: "https://github.com/WilliamPeynichou/ClaakeCode",
+    downloadLink: "https://github.com/WilliamPeynichou/ClaakeCode/releases/latest",
+    gallery: [ClaakeCodePreview]
+  },
+  {
+    id: 9,
+    slug: 'road-network',
+    title: "RoadNetwork",
+    type: "Python · Matplotlib · Q-learning",
+    year: "2026",
+    image: RoadNetworkReseau,
+    description: {
+      fr: "RoadNetwork est un générateur procédural de réseau routier sur une grille, avec animation de la construction des routes et circulation de véhicules, entièrement rendu avec Matplotlib (animation, widgets, patches). Projet d'équipe du Bootcamp Python B3 — Sup de Vinci.\n\nLa fenêtre propose des curseurs (routes, intersections visées, véhicules), une seed reproductible, le plus court chemin START → END (BFS) surligné, la détection et le comptage des collisions, et trois conduites au choix : hasard, règle de divergence, ou conduite apprise.\n\nLa conduite apprise repose sur un Q-learning écrit à la main (~170 lignes, sans librairie ML) : les véhicules apprennent seuls à choisir leur sortie et leur allure pour éviter les collisions. Sur 20 réseaux jamais vus, ils passent de 86 collisions/min (hasard) à moins de 10, avec des trajets plus courts. Le tout couvert par 137 tests pytest, ruff et un balayage automatique de 120 réseaux.",
+      en: "RoadNetwork is a procedural road-network generator on a grid, with animated road construction and vehicle traffic, fully rendered with Matplotlib (animation, widgets, patches). Team project for the Python B3 Bootcamp — Sup de Vinci.\n\nThe window offers sliders (roads, target intersections, vehicles), a reproducible seed, the START → END shortest path (BFS) highlighted, collision detection and counting, and three driving modes: random, divergence rule, or learned driving.\n\nLearned driving relies on hand-written Q-learning (~170 lines, no ML library): vehicles learn by themselves which exit and pace to pick to avoid collisions. On 20 unseen networks, they go from 86 collisions/min (random) to under 10, with shorter trips. Everything is covered by 137 pytest tests, ruff and an automated sweep over 120 networks."
+    },
+    technologies: ["Python 3.14", "Matplotlib", "Q-learning", "BFS", "pytest", "ruff"],
+    githubLink: "https://github.com/WilliamPeynichou/Matplotlib",
+    gallery: [RoadNetworkReseau, RoadNetworkApprentissage, RoadNetworkComparaison]
+  },
+  {
     id: 0,
     slug: 'trouvetaboite',
     title: "TrouveTaBoite",
-    type: "Company Finder — Open Data APIs",
-    year: "2025",
+    type: "Company Finder & job-search toolkit — Open Data",
+    year: "2025 — 2026",
     image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2670&auto=format&fit=crop",
     description: {
-      fr: "TrouveTaBoite est un outil de recherche d'entreprises basé sur les données open data du gouvernement français. En quelques clics : un lieu, un rayon, un secteur d'activité — et tu obtiens toutes les entreprises autour de toi avec leurs coordonnées.\n\nL'idée est née d'un constat simple : les meilleurs recrutements passent par la candidature spontanée. Encore faut-il savoir qui contacter. Plutôt que d'utiliser des données privées ou payantes, le projet exploite les APIs officielles et gratuites mises à disposition par les services publics français.\n\nL'application totalise plus de 1 000 utilisateurs par mois et répond à un besoin concret : stagiaires, alternants, freelances et patrons qui cherchent des prestataires à proximité.",
-      en: "TrouveTaBoite is a company search tool built on French government open data. A few clicks — a location, a radius, a business sector — and you get every company around you with their contact details.\n\nThe idea came from a simple observation: the best recruitments happen through direct outreach, not job listings. But that requires knowing who to contact. Rather than using private or paid data, the project leverages the official, free APIs provided by French public services.\n\nThe app reaches over 1,000 users per month and addresses a real need: interns, apprentices, freelancers, and business owners looking for nearby service providers."
+      fr: "TrouveTaBoite est un outil de recherche d'entreprises basé sur les données open data du gouvernement français. En quelques clics : un lieu, un rayon, un secteur d'activité, une forme juridique — et tu obtiens toutes les entreprises autour de toi avec leurs coordonnées, sur une carte.\n\nL'idée est née d'un constat simple : les meilleurs recrutements passent par la candidature spontanée. Encore faut-il savoir qui contacter. Plutôt que d'utiliser des données privées ou payantes, le projet exploite les APIs officielles et gratuites mises à disposition par les services publics français.\n\nL'outil est devenu une boîte à outils de recherche d'emploi : recherche d'associations, sélection de candidatures avec suivi (à contacter, contactée, à relancer) et export sans compte, guide de l'alternance, et un générateur de CV assisté par IA adapté au type de contrat (CDI, CDD, intérim, alternance) et au secteur, en version ATS ou design.\n\nL'application totalise plus de 1 000 utilisateurs par mois : stagiaires, alternants, freelances et patrons qui cherchent des prestataires à proximité.",
+      en: "TrouveTaBoite is a company search tool built on French government open data. A few clicks — a location, a radius, a business sector, a legal form — and you get every company around you with their contact details, on a map.\n\nThe idea came from a simple observation: the best recruitments happen through direct outreach, not job listings. But that requires knowing who to contact. Rather than using private or paid data, the project leverages the official, free APIs provided by French public services.\n\nThe tool has grown into a job-search toolkit: association search, an application shortlist with tracking (to contact, contacted, follow up) and export with no account needed, a work-study guide, and an AI-assisted CV builder adapted to the contract type (permanent, fixed-term, temp, work-study) and the sector, in ATS or design flavour.\n\nThe app reaches over 1,000 users per month: interns, apprentices, freelancers, and business owners looking for nearby service providers."
     },
-    technologies: ["React", "Node.js", "Express", "API Sirene", "API Recherche Entreprises", "geo.gouv.fr", "Vercel"],
-    liveLink: "https://trouvetaboite.com",
+    technologies: ["React", "Tailwind CSS", "Node.js", "Express", "PostgreSQL", "API Recherche Entreprises", "API Sirene", "geo.gouv.fr", "Vercel", "Railway", "GitHub Actions"],
+    liveLink: "https://www.trouvetaboite.com",
     githubLink: "https://github.com/WilliamPeynichou/FindYourCompany",
     gallery: []
   },
@@ -36,21 +76,24 @@ export const projects = [
     id: 1,
     slug: 'at-ifit',
     title: "At Ifit",
-    type: "Sport Data with RAG on chat bot",
-    year: "2025",
+    type: "Sport & nutrition data with an agentic AI coach",
+    year: "2025 — 2026",
     image: HomeAtIfit,
     description: {
-      fr: "Cet outil est un double tracker (2-en-1) qui met en corrélation l'évolution du poids avec les activités importées de Strava. Il offre des visualisations graphiques dédiées aux performances sportives ainsi qu'à la perte ou au gain de poids.\n\nLe fonctionnement est simple : après l'inscription, l'utilisateur renseigne son poids actuel, son objectif (perte ou gain) et connecte son compte Strava. Une analyse personnalisée basée sur le profil (genre inclusif, poids) fournit l'IMC et une cible calorique journalière. Une section d'aide détaillée accompagne l'utilisateur pour comprendre chaque métrique.\n\nL'application est inclusive et adaptée à tous : femmes, hommes et personnes transgenres.",
-      en: "This tool is a 2-in-1 tracker correlating weight evolution with Strava activities. It features dedicated charts for both sports performance and weight loss/gain analysis.\n\nHow it works: after signing up, users enter their current weight, their goal (loss or gain), and connect their Strava account. A personalized analysis based on the profile (inclusive gender, weight) provides BMI and a daily caloric target. A detailed help section explains every metric.\n\nThe platform is inclusive and designed for everyone: women, men, and transgender individuals."
+      fr: "At Ifit est une application de suivi sportif et nutritionnel connectée à Strava. Elle met en corrélation l'évolution du poids avec les activités importées, et propose des dashboards dédiés au vélo, à la course et à la natation, avec un sélecteur temporel global (3M, 6M, 12M, personnalisé) et des modales d'analyse plein écran.\n\nLe fonctionnement est simple : après l'inscription, l'utilisateur renseigne son profil et son objectif, puis connecte Strava (ou passe cette étape). Le calculateur KCAL estime le métabolisme (Mifflin-St Jeor) et l'ajuste avec l'activité réelle pour donner une cible calorique journalière.\n\nL'application s'est enrichie d'un pôle nutrition (carte nutrition d'effort, préparation de course et plan de ravitaillement triathlon, modèles de produits recommandés selon le profil, comparateur d'aliments, page sources) et d'un coach IA agentique qui interroge les données de l'utilisateur via des outils. Mode sombre, multilingue (FR, EN, IT, TR), et une conformité complète : bandeau de consentement, pages légales, export et suppression des données (RGPD).\n\nL'application est inclusive et adaptée à tous : femmes, hommes et personnes transgenres.",
+      en: "At Ifit is a sports and nutrition tracking app connected to Strava. It correlates weight evolution with imported activities and offers dedicated cycling, running and swimming dashboards, with a global time selector (3M, 6M, 12M, custom) and full-screen analysis modals.\n\nHow it works: after signing up, users fill in their profile and goal, then connect Strava (or skip it). The KCAL calculator estimates metabolism (Mifflin-St Jeor) and adjusts it with real activity to give a daily caloric target.\n\nThe app has grown a nutrition hub (effort nutrition card, race preparation and triathlon fueling plan, product models recommended by athlete profile, food comparisons, sources page) and an agentic AI coach that queries the user's data through tools. Dark mode, multilingual (FR, EN, IT, TR), and full compliance: consent banner, legal pages, data export and deletion (GDPR).\n\nThe platform is inclusive and designed for everyone: women, men, and transgender individuals."
     },
     technologies: [
       "React",
       "Node.js",
       "Express",
-      "n8n AI Agent",
-      "Gemini",
+      "Tailwind CSS",
+      "Recharts",
+      "Strava API",
+      "AI agent (Anthropic / Mistral)",
       "MySQL",
-      "Bore Tunnel"
+      "Sequelize",
+      "Railway"
     ],
     liveLink: "https://atifit.up.railway.app/",
     githubLink: "https://github.com/WilliamPeynichou/At-ifit",
@@ -112,7 +155,7 @@ export const projects = [
       fr: "Mon portfolio personnel présentant mes projets et compétences.",
       en: "My personal portfolio showcasing my projects and skills."
     },
-    technologies: ["React", "Tailwind CSS", "Framer Motion"],
+    technologies: ["React", "Tailwind CSS", "Three.js", "React Three Fiber", "Anime.js"],
     githubLink: "https://github.com/WilliamPeynichou/Portfolio_",
     gallery: []
   },

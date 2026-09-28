@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { useLoading } from '../context/LoadingContext'
+import { useLoading } from '../context/useLoading'
 
 function LoadingScreen() {
   const { loaded } = useLoading()

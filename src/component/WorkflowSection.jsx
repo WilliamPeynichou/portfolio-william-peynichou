@@ -1,6 +1,6 @@
-import { useState, useEffect, useRef } from 'react'
+import { useState } from 'react'
 import { Link } from 'react-router-dom'
-import { useLanguage } from '@/context/LanguageContext'
+import { useLanguage } from '@/context/useLanguage'
 import { workflows } from '@/data/workflows'
 
 function WorkflowItem({ workflow, index, setHoveredWorkflow, hoveredWorkflow }) {
@@ -51,19 +51,9 @@ function WorkflowItem({ workflow, index, setHoveredWorkflow, hoveredWorkflow }) 
 export function WorkflowSection() {
   const { language } = useLanguage()
   const [hoveredWorkflow, setHoveredWorkflow] = useState(null)
-  const [cursorPos, setCursorPos] = useState({ x: 0, y: 0 })
-  const sectionRef = useRef(null)
-
-  useEffect(() => {
-    const handleMouseMove = (e) => {
-      setCursorPos({ x: e.clientX, y: e.clientY })
-    }
-    window.addEventListener('mousemove', handleMouseMove)
-    return () => window.removeEventListener('mousemove', handleMouseMove)
-  }, [])
 
   return (
-    <section ref={sectionRef} className="relative bg-black text-white py-32 z-20">
+    <section className="relative bg-black text-white py-32 z-20">
       {/* Header Section */}
       <div className="max-w-7xl mx-auto px-4 md:px-12 mb-24">
         <h2 className="text-sm font-mono text-gray-500 mb-4 uppercase tracking-wider">

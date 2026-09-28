@@ -1,7 +1,7 @@
 import { useRef, useEffect, Suspense } from 'react'
 import { Canvas, useFrame } from '@react-three/fiber'
 import { useGLTF, Environment, ContactShadows } from '@react-three/drei'
-import { useLoading } from '../../context/LoadingContext'
+import { useLoading } from '../../context/useLoading'
 
 function Model() {
   const { scene } = useGLTF('/models/bonhomme.glb')

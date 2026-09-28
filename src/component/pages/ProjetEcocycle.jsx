@@ -1,18 +1,18 @@
-import { useState, useEffect, useRef } from 'react'
+import { useState, useEffect, useRef, useCallback } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
-import { useLanguage } from '@/context/LanguageContext'
+import { useLanguage } from '@/context/useLanguage'
 import { projects } from '@/data/projects'
 import ReactIcon from '@/components/icons/react-icon'
 import Footer from '@/component/layout/footer'
 import Header from '@/component/layout/header'
 import ImageModal from '@/component/ImageModal'
 
-function TitleOpener({ title, titleOpacity, subtitle, language }) {
+function TitleOpener({ title, titleOpacity, subtitle }) {
   const [displayText, setDisplayText] = useState(title)
   const chars = 'ABCDEFGYIJKLNOPQRSTUVWXYZ'
   const intervalRef = useRef(null)
 
-  const scramble = () => {
+  const scramble = useCallback(() => {
     let iteration = 0
     clearInterval(intervalRef.current)
     
@@ -33,12 +33,12 @@ function TitleOpener({ title, titleOpacity, subtitle, language }) {
       
       iteration += 1 / 3
     }, 30)
-  }
+  }, [title])
 
   useEffect(() => {
     scramble()
     return () => clearInterval(intervalRef.current)
-  }, [title])
+  }, [scramble])
 
   return (
     <div 

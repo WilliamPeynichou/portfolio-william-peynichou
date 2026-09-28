@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { useLanguage } from '@/context/LanguageContext'
+import { useLanguage } from '@/context/useLanguage'
 import ImageModal from '@/component/ImageModal'
 import profileImage from '@/assets/profile.webp'
 import cvImage from '@/assets/cv.webp'

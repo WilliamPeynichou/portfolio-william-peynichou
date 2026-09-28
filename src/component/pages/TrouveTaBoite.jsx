@@ -1,7 +1,7 @@
-import { useState, useEffect, useRef } from 'react'
+import { useState, useEffect, useRef, useCallback } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { ExternalLink } from 'lucide-react'
-import { useLanguage } from '@/context/LanguageContext'
+import { useLanguage } from '@/context/useLanguage'
 import { projects } from '@/data/projects'
 import Footer from '@/component/layout/footer'
 import Header from '@/component/layout/header'
@@ -11,7 +11,7 @@ function TitleOpener({ title, titleOpacity, subtitle }) {
   const chars = 'ABCDEFGYIJKLNOPQRSTUVWXYZ'
   const intervalRef = useRef(null)
 
-  const scramble = () => {
+  const scramble = useCallback(() => {
     let iteration = 0
     clearInterval(intervalRef.current)
     intervalRef.current = setInterval(() => {
@@ -23,12 +23,12 @@ function TitleOpener({ title, titleOpacity, subtitle }) {
       if (iteration >= title.length) clearInterval(intervalRef.current)
       iteration += 1 / 3
     }, 30)
-  }
+  }, [title])
 
   useEffect(() => {
     scramble()
     return () => clearInterval(intervalRef.current)
-  }, [title])
+  }, [scramble])
 
   return (
     <div className="absolute inset-0 flex flex-col items-center justify-center z-10" style={{ opacity: titleOpacity }}>
@@ -125,6 +125,20 @@ function TrouveTaBoite() {
         },
       ]
 
+  const newFeatures = language === 'fr'
+    ? [
+        { title: 'Recherche affinée', desc: 'Autocomplétion du lieu, carte, rayon, secteur NAF et filtre par forme juridique, pagination « plus de résultats ».' },
+        { title: 'Associations', desc: 'Recherche dédiée aux associations par domaine, via les codes de nature juridique de l’API Recherche Entreprises.' },
+        { title: 'Suivi de candidatures', desc: 'Sélection d’entreprises avec statut (à contacter, contactée, à relancer) et export, sans créer de compte.' },
+        { title: 'Guide & CV assisté par IA', desc: 'Guide de l’alternance et générateur de CV adapté au contrat (CDI, CDD, intérim, alternance) et au secteur, en ATS ou design.' },
+      ]
+    : [
+        { title: 'Refined search', desc: 'Location autocomplete, map, radius, NAF sector and legal-form filter, “more results” pagination.' },
+        { title: 'Associations', desc: 'Dedicated association search by domain, using legal-nature codes from the Recherche Entreprises API.' },
+        { title: 'Application tracking', desc: 'Company shortlist with status (to contact, contacted, follow up) and export, no account needed.' },
+        { title: 'Guide & AI-assisted CV', desc: 'Work-study guide and a CV builder adapted to the contract (permanent, fixed-term, temp, work-study) and sector, ATS or design.' },
+      ]
+
   const useCases = language === 'fr'
     ? [
         { label: 'Etudiant / stagiaire', desc: "Trouve les entreprises du secteur visé dans ta ville pour candidater directement." },
@@ -183,7 +197,7 @@ function TrouveTaBoite() {
                 className="inline-flex items-center gap-2 px-5 py-3 rounded-xl border border-white/20 bg-white/5 hover:bg-white/10 text-white text-sm font-mono transition-all self-start md:self-auto"
               >
                 <ExternalLink size={16} />
-                trouvetaboite.com
+                www.trouvetaboite.com
               </a>
             </div>
 
@@ -197,7 +211,7 @@ function TrouveTaBoite() {
                   <span className="w-3 h-3 rounded-full bg-red-500/70" />
                   <span className="w-3 h-3 rounded-full bg-yellow-500/70" />
                   <span className="w-3 h-3 rounded-full bg-green-500/70" />
-                  <span className="ml-4 text-xs font-mono text-gray-500 truncate">https://trouvetaboite.com</span>
+                  <span className="ml-4 text-xs font-mono text-gray-500 truncate">https://www.trouvetaboite.com</span>
                 </div>
                 {!iframeLoaded && (
                   <div className="absolute inset-0 top-[42px] flex items-center justify-center bg-gray-950">
@@ -205,7 +219,7 @@ function TrouveTaBoite() {
                   </div>
                 )}
                 <iframe
-                  src="https://trouvetaboite.com"
+                  src="https://www.trouvetaboite.com"
                   title="TrouveTaBoite live preview"
                   className="w-full border-0"
                   style={{ height: 'calc(100% - 42px)' }}
@@ -255,6 +269,22 @@ function TrouveTaBoite() {
                 <p className="text-gray-300 leading-relaxed text-xl font-light whitespace-pre-line">
                   {project.description?.[language] || project.description?.['en']}
                 </p>
+              </div>
+            </div>
+
+            {/* Nouveautés */}
+            <div className="mb-24">
+              <h3 className="text-sm font-mono text-gray-500 uppercase tracking-widest mb-8">
+                {language === 'fr' ? 'Dernières évolutions' : 'Latest updates'}
+              </h3>
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                {newFeatures.map((f, i) => (
+                  <div key={f.title} className="flex flex-col gap-3 p-6 rounded-2xl border border-white/10 bg-white/5">
+                    <span className="text-xs font-mono text-gray-600">{String(i + 1).padStart(2, '0')}</span>
+                    <p className="text-sm font-semibold text-white">{f.title}</p>
+                    <p className="text-xs text-gray-500 font-mono leading-relaxed">{f.desc}</p>
+                  </div>
+                ))}
               </div>
             </div>
 
@@ -367,8 +397,8 @@ function TrouveTaBoite() {
                     step: '01',
                     label: 'GitHub',
                     sub: language === 'fr'
-                      ? 'Code versionné sur FindYourCompany. CI/CD déclenché automatiquement sur push main vers Vercel et Railway.'
-                      : 'Code versioned on FindYourCompany. CI/CD auto-triggered on main push to Vercel and Railway.',
+                      ? 'Code versionné sur FindYourCompany. Workflow GitHub Actions déclenché sur push main (build + déploiement).'
+                      : 'Code versioned on FindYourCompany. GitHub Actions workflow triggered on main push (build + deploy).',
                   },
                   {
                     step: '02',
