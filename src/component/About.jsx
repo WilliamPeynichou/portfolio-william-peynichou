@@ -4,8 +4,8 @@ function About() {
   const { language } = useLanguage()
 
   const content = {
-    en: "I’m a Data Scientist apprentice at Caisse d’Épargne CEAPC, passionate about software development and AI. At Ifit brings these interests together through sports data.",
-    fr: "Data Scientist en apprentissage à la Caisse d’Épargne CEAPC, je suis passionné de développement et d’IA. At Ifit réunit ces centres d’intérêt autour des données sportives."
+    en: "I’m a Data Scientist apprentice, passionate about software development and AI. At Ifit brings these interests together through sports data.",
+    fr: "Data Scientist en apprentissage, je suis passionné de développement et d’IA. At Ifit réunit ces centres d’intérêt autour des données sportives."
   }
 
   return (

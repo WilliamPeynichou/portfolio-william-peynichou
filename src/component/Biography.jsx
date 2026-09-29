@@ -5,15 +5,15 @@ function Biography() {
 
   const content = {
     en: {
-      title: "I'm William Peynichou, a Data Scientist apprentice at Caisse d’Épargne CEAPC passionate about software development and AI.",
-      p1: "I trained in software development at La Plateforme and am pursuing a master’s in Big Data and AI at Sup de Vinci. These foundations guide my work at the intersection of data, development and AI.",
+      title: "I'm William Peynichou, a Data Scientist apprentice passionate about software development and AI.",
+      p1: "I trained in software development at L’Atelier and am pursuing a master’s in Big Data and AI at Sup de Vinci. These foundations guide my work at the intersection of data, development and AI.",
       p2: "From At Ifit, my sports data science project, to RoadNetwork, a machine learning project based on reinforcement learning, I turn these interests into concrete applications.",
       clientsTitle: "Technologies",
       servicesTitle: "Services"
     },
     fr: {
-      title: "Je suis William Peynichou, Data Scientist en apprentissage à la Caisse d’Épargne CEAPC, passionné de développement et d’intelligence artificielle.",
-      p1: "Formé au développement à La Plateforme, je poursuis un master Big Data et IA à Sup de Vinci. Ce parcours nourrit mon travail à la croisée de la donnée, du développement et de l’intelligence artificielle.",
+      title: "Je suis William Peynichou, Data Scientist en apprentissage, passionné de développement et d’intelligence artificielle.",
+      p1: "Formé au développement à L’Atelier, je poursuis un master Big Data et IA à Sup de Vinci. Ce parcours nourrit mon travail à la croisée de la donnée, du développement et de l’intelligence artificielle.",
       p2: "D’At Ifit, mon projet de data science dans le sport, à RoadNetwork, un projet de machine learning par apprentissage par renforcement, je concrétise ces centres d’intérêt.",
       clientsTitle: "Technologies",
       servicesTitle: "Services"

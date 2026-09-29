@@ -36,7 +36,7 @@ const WilliamPeynichou = () => {
   const profile = {
     name: 'William Peynichou',
     age: 27,
-    role: 'Data Scientist apprentice at Caisse d’Épargne CEAPC',
+    role: 'Data Scientist apprentice',
     location: 'Bordeaux, France',
     skills: [
       'React', 'Node.js', 'Express', 'Tailwind CSS', 'Three.js', 'Animate UI',
@@ -64,7 +64,7 @@ const WilliamPeynichou = () => {
         <article>
           <h3>L'Atelier</h3>
           <span>16 months</span>
-          <p>Data Scientist apprentice at Caisse d’Épargne CEAPC · passionate about development and AI</p>
+          <p>Data Scientist apprentice · passionate about development and AI</p>
         </article>
       </section>
     </div>

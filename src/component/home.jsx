@@ -7,6 +7,7 @@ import ProjectsPresentation from './ProjectsPresentation';
 import WorkflowSection from './WorkflowSection';
 import Stacks from './Stacks';
 import ProfileSection from './ProfileSection';
+import ExperienceSection from './ExperienceSection';
 import VeilleSection from './VeilleSection';
 import { PhotographySection, ArchivesSection } from './ExtraSections';
 
@@ -32,6 +33,7 @@ const Home = () => {
             <WorkflowSection />
             <Stacks />
             <ProfileSection />
+            <ExperienceSection />
             <VeilleSection />
             <PhotographySection />
             <ArchivesSection />

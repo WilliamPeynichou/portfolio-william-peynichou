@@ -11,19 +11,19 @@ function ProfileSection() {
   const content = {
     fr: {
       title: "Profil",
-      role: "Data Scientist en apprentissage à la Caisse d’Épargne CEAPC",
+      role: "Data Scientist en apprentissage",
       downloadCV: "Télécharger mon CV",
       viewCV: "Voir le CV",
       about: "À propos",
-      description: "Data Scientist en apprentissage à la Caisse d’Épargne CEAPC, je suis passionné par le développement et l’intelligence artificielle. Formé au développement à La Plateforme, je poursuis un master Big Data et IA à Sup de Vinci. At Ifit est mon projet de data science appliquée au sport."
+      description: "Data Scientist en apprentissage, je suis passionné par le développement et l’intelligence artificielle. Formé au développement à L’Atelier, je poursuis un master Big Data et IA à Sup de Vinci. At Ifit est mon projet de data science appliquée au sport."
     },
     en: {
       title: "Profile",
-      role: "Data Scientist apprentice at Caisse d’Épargne CEAPC",
+      role: "Data Scientist apprentice",
       downloadCV: "Download CV",
       viewCV: "View CV",
       about: "About",
-      description: "I’m a Data Scientist apprentice at Caisse d’Épargne CEAPC, passionate about software development and AI. I trained in software development at La Plateforme and am pursuing a master’s in Big Data and AI at Sup de Vinci. At Ifit is my sports data science project."
+      description: "I’m a Data Scientist apprentice, passionate about software development and AI. I trained in software development at L’Atelier and am pursuing a master’s in Big Data and AI at Sup de Vinci. At Ifit is my sports data science project."
     }
   }
 

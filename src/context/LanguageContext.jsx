@@ -12,7 +12,7 @@ const translations = {
     },
     about: {
       title: 'About',
-      content: 'Data Scientist apprentice at Caisse d’Épargne CEAPC, passionate about software development and AI.'
+      content: 'Data Scientist apprentice, passionate about software development and AI.'
     },
     projects: {
       title: 'My Projects',
@@ -32,7 +32,7 @@ const translations = {
       copyright: 'All rights reserved.'
     },
     codePresentation: {
-      role: 'Data Scientist apprentice at Caisse d’Épargne CEAPC',
+      role: 'Data Scientist apprentice',
       experience: 'Experience',
       months: 'months',
       developer: 'Full stack developer'
@@ -48,7 +48,7 @@ const translations = {
     },
     about: {
       title: 'À propos',
-      content: 'Data Scientist en apprentissage à la Caisse d’Épargne CEAPC, passionné de développement et d’intelligence artificielle.'
+      content: 'Data Scientist en apprentissage, passionné de développement et d’intelligence artificielle.'
     },
     projects: {
       title: 'Mes Projets',
@@ -68,7 +68,7 @@ const translations = {
       copyright: 'Tous droits réservés.'
     },
     codePresentation: {
-      role: 'Data Scientist en apprentissage à la Caisse d’Épargne CEAPC',
+      role: 'Data Scientist en apprentissage',
       experience: 'Expérience',
       months: 'mois',
       developer: 'Développeur full stack'
