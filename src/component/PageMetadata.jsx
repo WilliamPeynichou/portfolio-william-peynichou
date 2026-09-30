@@ -9,6 +9,7 @@ const ORIGIN = 'https://williampeynichou.fr'
 const sectionPages = {
   '/contact': { fr: ['Contact', 'Une idée de projet ? Contactez William Peynichou.'], en: ['Contact', 'Have a project in mind? Contact William Peynichou.'] },
   '/photography': { fr: ['Photographie', 'Galerie photo de William Peynichou.'], en: ['Photography', 'Photography gallery by William Peynichou.'] },
+  '/veille': { fr: ['Veille & recommandations', 'Les créateurs, comptes, sites et outils que je suis sur le développement et l’IA.'], en: ['Insights & recommendations', 'The creators, accounts, sites and tools I follow on development and AI.'] },
   '/archives': { fr: ['Archives', 'Tous les projets de développement de William Peynichou.'], en: ['Archives', 'All development projects by William Peynichou.'] },
 }
 

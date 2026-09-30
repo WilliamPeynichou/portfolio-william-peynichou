@@ -10,6 +10,7 @@ import PageMetadata from './component/PageMetadata'
 const Contact = lazy(() => import('./component/pages/Contact'))
 const Photography = lazy(() => import('./component/pages/Photography'))
 const Archives = lazy(() => import('./component/pages/Archives'))
+const Veille = lazy(() => import('./component/pages/Veille'))
 const TrouveTaBoite = lazy(() => import('./component/pages/TrouveTaBoite'))
 const ProjetAtIfit = lazy(() => import('./component/pages/ProjetAt-Ifit'))
 const Commis = lazy(() => import('./component/pages/Commis'))
@@ -42,6 +43,7 @@ function App() {
           <Route path="/contact" element={<Contact />} />
           <Route path="/photography" element={<Photography />} />
           <Route path="/archives" element={<Archives />} />
+          <Route path="/veille" element={<Veille />} />
           <Route path="/project/claake-code" element={<ClaakeCode />} />
           <Route path="/project/road-network" element={<RoadNetwork />} />
           <Route path="/project/trouvetaboite" element={<TrouveTaBoite />} />

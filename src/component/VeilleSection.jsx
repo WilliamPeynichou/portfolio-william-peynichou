@@ -48,6 +48,11 @@ function VeilleSection() {
             {language === 'fr' ? 'Des sujets concrets explorés au fil de mes projets.' : 'Concrete topics explored through my projects.'}
           </p>
         </div>
+        <Link to="/veille"
+          className="group inline-flex w-fit items-center gap-3 px-8 py-4 rounded-full border border-white text-white hover:bg-white hover:text-black transition-colors duration-300">
+          <span>{language === 'fr' ? 'Ma veille & mes recommandations' : 'My insights & recommendations'}</span>
+          <span className="transition-transform duration-300 group-hover:translate-x-1">→</span>
+        </Link>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {articles.map(item => (
             <Link key={item.to} to={item.to}
