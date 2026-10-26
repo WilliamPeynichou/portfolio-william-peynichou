@@ -117,13 +117,13 @@ function ProjetAtIfit() {
 
   const deploySteps = language === 'fr'
     ? [
-        { step: '01', label: 'Code versionné sur GitHub', sub: 'Monorepo client / server, tests Jest sur le coach IA' },
+        { step: '01', label: 'Code versionné sur GitHub', sub: 'Monorepo client / server, tests Jest (API) et Playwright (e2e)' },
         { step: '02', label: 'Frontend & backend sur Railway', sub: 'Build Vite + container Node/Express, URLs publiques HTTPS' },
         { step: '03', label: 'MySQL persistant', sub: 'Sequelize, filtres temporels SQL, synchronisation Strava complète' },
         { step: '04', label: 'OAuth Strava en production', sub: 'Callback HTTPS Railway — tokens sécurisés' },
       ]
     : [
-        { step: '01', label: 'Code versioned on GitHub', sub: 'Client / server monorepo, Jest tests on the AI coach' },
+        { step: '01', label: 'Code versioned on GitHub', sub: 'Client / server monorepo, Jest (API) and Playwright (e2e) tests' },
         { step: '02', label: 'Frontend & backend on Railway', sub: 'Vite build + Node/Express container, public HTTPS URLs' },
         { step: '03', label: 'Persistent MySQL', sub: 'Sequelize, SQL time filters, full Strava sync' },
         { step: '04', label: 'Strava OAuth in production', sub: 'HTTPS Railway callback — secured tokens' },
@@ -131,16 +131,20 @@ function ProjetAtIfit() {
 
   const newFeatures = language === 'fr'
     ? [
-        { title: 'Dashboards par sport', desc: 'Vélo, course et natation, sélecteur temporel global et 4 modales d’analyse plein écran.' },
-        { title: 'Nutrition & course', desc: 'Carte nutrition d’effort, préparation de course, plan de ravitaillement triathlon, comparateur d’aliments.' },
+        { title: 'Dashboards par sport', desc: 'Vélo, course et natation, sélecteur temporel global et modales d’analyse plein écran.' },
+        { title: 'Planificateur de course GPX', desc: 'Import GPX, assistant guidé, sections d’allure, ravitaillements sur carte, plan de ravitaillement et plan d’entraînement.' },
+        { title: 'Prototype machine learning', desc: 'Prédiction du temps de sorties vélo, évaluée en walk-forward sans fuite d’information. Expérimental.' },
         { title: 'Coach IA agentique', desc: 'Contexte unifié, outils d’analyse des données, provider Anthropic ou Mistral, assistant mobile.' },
-        { title: 'Conformité & UX', desc: 'Consentement, pages légales, export / suppression RGPD, mode sombre, onboarding Strava optionnel.' },
+        { title: 'Performance & fiabilité', desc: 'Limiteur de quota Strava, écritures en lot, dashboards ciblés avec cache, tests end-to-end.' },
+        { title: 'Identité & conformité', desc: 'Logo dédié, mode sombre, consentement, pages légales, export et suppression RGPD.' },
       ]
     : [
-        { title: 'Per-sport dashboards', desc: 'Cycling, running and swimming, global time selector and 4 full-screen analysis modals.' },
-        { title: 'Nutrition & racing', desc: 'Effort nutrition card, race preparation, triathlon fueling plan, food comparisons.' },
+        { title: 'Per-sport dashboards', desc: 'Cycling, running and swimming, global time selector and full-screen analysis modals.' },
+        { title: 'GPX race planner', desc: 'GPX import, guided assistant, pacing sections, aid stations on a map, fueling plan and training plan.' },
+        { title: 'Machine learning prototype', desc: 'Cycling ride-time prediction, evaluated walk-forward with no information leakage. Experimental.' },
         { title: 'Agentic AI coach', desc: 'Unified context, data-analysis tools, Anthropic or Mistral provider, mobile assistant.' },
-        { title: 'Compliance & UX', desc: 'Consent, legal pages, GDPR export / delete, dark mode, optional Strava onboarding.' },
+        { title: 'Performance & reliability', desc: 'Strava quota limiter, batched writes, targeted dashboards with caching, end-to-end tests.' },
+        { title: 'Identity & compliance', desc: 'Dedicated logo, dark mode, consent, legal pages, GDPR export and deletion.' },
       ]
 
   return (
@@ -258,7 +262,7 @@ function ProjetAtIfit() {
               <h3 className="text-sm font-mono text-gray-500 uppercase tracking-widest mb-8">
                 {language === 'fr' ? 'Dernières évolutions' : 'Latest updates'}
               </h3>
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
                 {newFeatures.map((f, i) => (
                   <div key={f.title} className="flex flex-col gap-3 p-6 rounded-2xl border border-white/10 bg-white/5">
                     <span className="text-xs font-mono text-gray-600">{String(i + 1).padStart(2, '0')}</span>
@@ -349,6 +353,49 @@ function ProjetAtIfit() {
                   </p>
                 </details>
               )}
+            </div>
+
+            {/* Prototype ML */}
+            <div className="mb-24">
+              <h3 className="text-sm font-mono text-gray-500 uppercase tracking-widest mb-2">
+                {language === 'fr' ? 'Data science — prototype de prédiction vélo' : 'Data science — cycling prediction prototype'}
+              </h3>
+              <p className="text-gray-600 font-mono text-xs mb-10">
+                {language === 'fr'
+                  ? 'Un seul athlète · très petit échantillon réel · expérimental, pas en production'
+                  : 'Single athlete · very small real sample · experimental, not in production'}
+              </p>
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-10">
+                {(language === 'fr'
+                  ? [
+                      { k: 'Cible', v: 'Temps de déplacement des sorties vélo en extérieur, avec un intervalle de prédiction à 80 %.' },
+                      { k: 'Modèles', v: 'Gradient boosting (perte absolue) comparé à une heuristique, une médiane naïve et une régression Ridge. Modèle principal fixé à l’avance.' },
+                      { k: 'Données', v: '25 sorties réelles de départ, complétées par des trajets synthétiques (simulateur approximatif) utilisés uniquement à l’entraînement.' },
+                      { k: 'Variables', v: 'Distance, dénivelé et résumés des sorties précédentes, dont puissance normalisée (moyenne glissante 30 s) et découplage FC / effort.' },
+                    ]
+                  : [
+                      { k: 'Target', v: 'Moving time of outdoor cycling rides, with an 80% prediction interval.' },
+                      { k: 'Models', v: 'Gradient boosting (absolute loss) compared with a heuristic, a naive median and Ridge regression. Primary model fixed in advance.' },
+                      { k: 'Data', v: '25 initial real rides, completed with synthetic routes (approximate simulator) used for training only.' },
+                      { k: 'Features', v: 'Distance, elevation and summaries of previous rides, including normalized power (30 s rolling) and HR / effort decoupling.' },
+                    ]
+                ).map(item => (
+                  <div key={item.k} className="flex flex-col gap-3 p-6 rounded-2xl border border-white/10 bg-white/5">
+                    <p className="text-sm font-semibold text-white">{item.k}</p>
+                    <p className="text-xs text-gray-500 font-mono leading-relaxed">{item.v}</p>
+                  </div>
+                ))}
+              </div>
+              <div className="rounded-2xl border border-white/10 bg-white/5 p-6 md:p-8">
+                <p className="text-xs font-mono text-gray-500 uppercase tracking-widest mb-4">
+                  {language === 'fr' ? 'Rigueur d’évaluation' : 'Evaluation rigor'}
+                </p>
+                <p className="text-gray-300 text-base font-light leading-relaxed">
+                  {language === 'fr'
+                    ? "L’évaluation est menée en walk-forward sur les seules sorties réelles : les données synthétiques n’aident que l’entraînement, et seuls les résumés des sorties passées entrent dans le prédicteur. Les intervalles sont calibrés sur les résidus passés, et la comparaison à la baseline utilise un bootstrap par blocs (10 000 tirages). Une première mesure favorable avait été invalidée : elle utilisait de l’information future. Elle a été remplacée par cette évaluation sans fuite, dont les résultats restent exploratoires."
+                    : "Evaluation is walk-forward on real rides only: synthetic data only helps training, and only summaries of past rides enter the predictor. Intervals are calibrated on past residuals, and the comparison with the baseline uses a block bootstrap (10,000 repeats). An earlier favourable result was invalidated because it used future information. It was replaced by this leakage-free evaluation, whose results remain exploratory."}
+                </p>
+              </div>
             </div>
 
           </div>

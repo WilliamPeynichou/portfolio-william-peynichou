@@ -109,16 +109,30 @@ function ClaakeCode() {
         { title: 'Context under control', desc: 'Checkpoint rollback, auto/manual compaction, and a clean_context tool so the model cleans its own context.' },
       ]
 
+  const latest = fr
+    ? [
+        { title: 'Claaky, compagnon desktop', desc: "Toujours au premier plan, il réagit en temps réel aux 7 états de l'agent. Un raccourci global ouvre un chat en verre dépoli : mode Ask pour répondre directement, mode Code pour confier la tâche à l'IDE." },
+        { title: 'Salle 3D animée', desc: "Dans l'IDE, Claaky tape à son bureau quand l'agent travaille, réfléchit devant le tableau blanc et dort sous une couverture au repos. Images allégées : 3 Mo au lieu de 13 Mo." },
+        { title: 'Chat RLM', desc: "Moteur open source Prime Agent avec noyau Python persistant, dans son propre git worktree. Auto Compute lui confie un chat en un clic (expérimental, macOS)." },
+        { title: 'Benchmark & quotas', desc: "Usage des modèles mesuré (durées, tarifs, résumé dans le sélecteur), estimations de coût configurables et visibilité sur les quotas des providers. Nouveau : Kimi 3.1 Pro." },
+      ]
+    : [
+        { title: 'Claaky, desktop companion', desc: "Always on top, he reacts in real time to the agent's 7 states. A global shortcut opens a frosted-glass chat: Ask mode answers directly, Code mode hands the task to the IDE." },
+        { title: 'Animated 3D room', desc: "Inside the IDE, Claaky types at his desk while the agent works, thinks at the whiteboard and sleeps under a blanket when idle. Lighter assets: 3 MB instead of 13 MB." },
+        { title: 'RLM chat', desc: "Open-source Prime Agent engine with a persistent Python kernel, in its own git worktree. Auto Compute hands any chat over to it in one click (experimental, macOS)." },
+        { title: 'Benchmark & quotas', desc: "Measured model usage (durations, pricing, summary in the picker), configurable cost estimates and provider quota visibility. New: Kimi 3.1 Pro." },
+      ]
+
   const webItems = fr
     ? [
-        'Landing FR / EN découpée en pages Features, Settings, Agent, Why et FAQ',
+        'Landing FR / EN découpée en pages Features, Settings, Agent, RLM, Why et FAQ, avec une page « Nouveautés » par grosse version',
         'SEO + GEO : données structurées, sitemap, robots, llms.txt, social preview',
         'Performance : vidéo 22 Mo → 0,9 Mo, shader capé, lazy loading',
         'Pages légales, security.txt, headers de sécurité, assets auto-hébergés',
         'Téléchargements directs macOS, Windows et Linux',
       ]
     : [
-        'FR / EN landing split into Features, Settings, Agent, Why and FAQ pages',
+        'FR / EN landing split into Features, Settings, Agent, RLM, Why and FAQ pages, with a “What’s new” page for each major release',
         'SEO + GEO: structured data, sitemap, robots, llms.txt, social preview',
         'Performance: video 22 MB → 0.9 MB, capped shader, lazy loading',
         'Legal pages, security.txt, security headers, self-hosted assets',
@@ -260,6 +274,25 @@ function ClaakeCode() {
               </div>
             </div>
 
+            {/* Nouveautés v0.2 */}
+            <div className="mb-24">
+              <h3 className="text-sm font-mono text-gray-500 uppercase tracking-widest mb-2">
+                {fr ? 'Nouveautés' : "What's new"} · {project.version}
+              </h3>
+              <p className="text-gray-600 font-mono text-xs mb-8">
+                {fr ? 'La v0.2 est la plus grosse mise à jour à ce jour.' : 'v0.2 is the biggest update so far.'}
+              </p>
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                {latest.map((f, i) => (
+                  <div key={f.title} className="flex flex-col gap-3 p-6 rounded-2xl border border-white/10 bg-white/5">
+                    <span className="text-xs font-mono text-gray-600">{String(i + 1).padStart(2, '0')}</span>
+                    <p className="text-sm font-semibold text-white">{f.title}</p>
+                    <p className="text-xs text-gray-500 font-mono leading-relaxed">{f.desc}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+
             {/* ClaakeCodeWeb */}
             <div className="mb-24 grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
               <div>
@@ -293,13 +326,13 @@ function ClaakeCode() {
                   ? [
                       { label: 'Tauri 2 + Rust', sub: 'Cœur en crates Rust (core, app, un crate par provider), UI React.' },
                       { label: 'GitHub Actions', sub: 'Build universel macOS (.dmg), Windows (.exe) et Linux (.AppImage) à chaque tag.' },
-                      { label: 'Auto-updater', sub: "Mise à jour intégrée à l'application — plus de 60 releases publiées." },
+                      { label: 'Auto-updater', sub: "Mise à jour intégrée à l'application — plus de 80 releases publiées." },
                       { label: 'Zéro télémétrie', sub: 'Aucune collecte, aucun entraînement sur les conversations.' },
                     ]
                   : [
                       { label: 'Tauri 2 + Rust', sub: 'Core split into Rust crates (core, app, one crate per provider), React UI.' },
                       { label: 'GitHub Actions', sub: 'Universal macOS (.dmg), Windows (.exe) and Linux (.AppImage) builds on every tag.' },
-                      { label: 'Auto-updater', sub: 'In-app updates — more than 60 releases shipped.' },
+                      { label: 'Auto-updater', sub: 'In-app updates — more than 80 releases shipped.' },
                       { label: 'Zero telemetry', sub: 'No data collection, no training on conversations.' },
                     ]
                 ).map((s, i) => (
